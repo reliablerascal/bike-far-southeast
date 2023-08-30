@@ -12,8 +12,8 @@ var config = {
     use3dTerrain: false, //set true for enabling 3D maps.
     auto: false,
     title: 'PROTOTYPE- Far South Side Bike Access',
-    subtitle: 'Chicago\'s Southeast Side possesses a natural wealth of waterfront and park space, but bikers can\'t yet safely access it.',
-    byline: 'By Rob Reid | 18 August',
+    subtitle: 'Chicago\'s Southeast side possesses a wealth of waterfront and park space, but bikers can\'t yet safely access it.',
+    byline: 'By Rob Reid | 30 August',
     footer: 'See GitHub repository for methodology and data.<br>Created based on the <a href="https://github.com/mapbox/storytelling" target="_blank">Mapbox Storytelling</a> template.',
     leadPhoto: './images/calumet-park-beach-fence-16-9.jpg',
     // leadParagraph: 'Hegewisch and East Side, Chicago’s southeasternmost neighborhoods, possess an abundance of park space, including Eggers Grove, Wolf Lake, Calumet Park, and Hegewisch Marsh Park. The I-90 expressway and major streets including 106th Street and Ewing Avenue facilitate automobile access for far away visitors. But these resources remain underutilized, in part because access remains treacherous for local residents– especially cyclists.',
@@ -224,7 +224,7 @@ var config = {
             id: 'wolf-lake',
             alignment: 'left',
             hidden: false,
-            image: './images/wolf-lake-turn.jpg',
+            image: 'https://reliablerascal.github.io/bike-far-southeast/images/wolf-lake-turn.jpg',
             description: 'Turning north, the route entered the park along Wolf Lake Boulevard, where bikes share the road with automobile traffic.',
             location: {
                 center: [-87.53725587019011,
@@ -252,7 +252,7 @@ var config = {
             id: '106th-ewing',
             alignment: 'left',
             hidden: false,
-            image: './images/106-ewing.png',
+            image: 'https://reliablerascal.github.io/bike-far-southeast/images/106-ewing.png',
             description: 'Turning west along 106th, bikers were instructed to walk their bikes (for safety reasons?).',
             location: {
                 center: [-87.53512142817937,
@@ -280,7 +280,7 @@ var config = {
             id: '100th-viaduct',
             alignment: 'left',
             hidden: false,
-            image: './images/100th-viaduct.png',
+            image: 'https://reliablerascal.github.io/bike-far-southeast/images/100th-viaduct.png',
             description: 'Ewing intersects with 100th Street at the I-90 underpass. A public commenter on the <a href="https://storymaps.arcgis.com/stories/56fd791cb1fa4cf69cd67411c345442a" target="_blank">Lake Calumet Bike Network Study</a> suggested that this intersection needs "better signage/markings...in these strange intersections."',
             location: {
                 center: [-87.53510682861177,
@@ -308,7 +308,7 @@ var config = {
             id: 'calumet-beach',
             alignment: 'left',
             hidden: false,
-            image: './images/calumet-park-beach.jpg',
+            image: 'https://reliablerascal.github.io/bike-far-southeast/images/calumet-park-beach.jpg',
             description: 'The ride ended at Calumet Beach.',
             location: {
                 center: [-87.52929693758914,

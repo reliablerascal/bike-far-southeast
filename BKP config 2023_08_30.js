@@ -80,7 +80,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             //title: '',
-            image: 'https://reliablerascal.github.io/bike-far-southeast/images/hegewisch-marsh-park.jpg',
+            image: './images/hegewisch-marsh-park.jpg',
             description: 'Amongst the region\'s highlights, Hegewisch Marsh Park recently received a <a href="https://news.wttw.com/2022/12/09/feds-pour-big-money-coastal-restoration-projects-and-chicago-s-hegewisch-marsh-comes-out" target="_blank">$500,000 grant from the National Coastal Resilience Fund</a>. The <a href="https://ehq-production-us-california.s3.us-west-1.amazonaws.com/f899c722147d541e6b15b182d3519ecc550bf3e1/original/1692321554/a0eb09f778546029e629f366b3c32366_Hegewisch_Neighborhood_Plan_FINAL.pdf" target="_blank">Hegewisch Neighborhood Plan</a> released this month considers this park an "underutilized" resource, and recognizes the potential value of improved bike access for local businesses.',
             //and the The Oxford English dictionary defines a fort as a person or thing not susceptible to outside influence or disturbance.',
             location: {
@@ -168,7 +168,7 @@ var config = {
             id: 'henry-booth',
             alignment: 'left',
             hidden: false,
-            image: 'https://reliablerascal.github.io/bike-far-southeast/images/henry-booth-house.png',
+            image: './images/henry-booth-house.png',
             description: 'The route begins at Henry Booth House- close to Hegewisch Marsh Park but difficult to access across Torrence.',
             location: {
                 center: [-87.55685590723697,
@@ -196,7 +196,7 @@ var config = {
             id: '130th-baltimore',
             alignment: 'left',
             hidden: false,
-            image: 'https://reliablerascal.github.io/bike-far-southeast/images/baltimore-130th-bike-lane.png',
+            image: './images/baltimore-130th-bike-lane.png',
             description: 'The route continued south on Baltimore, a quieter road with a dedicated bike lane.',
             location: {
                 center: [-87.54712353449469,

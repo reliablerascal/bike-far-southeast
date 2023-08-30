@@ -67,6 +67,8 @@ var config = {
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [
+                //{layer: 'map', opacity:1},
+                //{layer: 'mapboxgl-canvas', opacity:1},
                 {layer: 'bike-path-dot', opacity:0},
                 {layer: 'mapbox-satellite', opacity:0}
             ],

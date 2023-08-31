@@ -158,23 +158,18 @@ var alignments = {
 }
 
 //RR 8/31/23 to scroll in and out of map
+function exitMap() {
+    console.log('attempting to scroll out');
+    document.getElementById('map').style.position = 'relative';
+}
+
 function enterMapTop() {
     console.log('shift map up');
     document.getElementById('map').style.top = 0;
 }
 
-//used window.scrollY to determine exact location where map should be fixed
-function exitMap() {
-    console.log('attempting to scroll out');
-    //var scrollY = window.scrollY;
-    //console.log(scrollY);
-    document.getElementById('map').style.top = '15534px';
-    document.getElementById('map').style.position = 'relative';
-}
-
 function enterMap() {
-    console.log('attempting to scroll in');
-    document.getElementById('map').style.top = 0;
+    console.log('attempting to scroll out');
     document.getElementById('map').style.position = 'fixed';
 }
 

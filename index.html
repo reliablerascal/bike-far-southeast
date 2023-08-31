@@ -129,8 +129,8 @@
 
 <div id="map"></div>
 <div id="story"></div>
-<!-- this adds text at the bottom, but it's covered by the map. how to scroll out of the map?--->
-    <div id="narr">this is the section past the map<br>HELLO<br>hello<br>HELLO<br>hulluh</div>
+<!-- this adds text at the bottom, which can be seen as long as you can scroll out of the map
+    <div id="narr">this is the section past the map<br>HELLO<br>hello<br>HELLO<br>hulluh</div>--->
 
 <script src="./config.js"></script>
 <script>
@@ -153,10 +153,14 @@ var alignments = {
 }
 
 //testing callback function RR 8/31/23
-//document.getElementById('map').style.opacity = 0;
 function exitMap() {
     console.log('attempting to scroll out');
     document.getElementById('map').style.position = 'relative';
+}
+
+function enterMap() {
+    console.log('attempting to scroll out');
+    document.getElementById('map').style.position = 'fixed';
 }
 
 function getLayerPaintType(layer) {

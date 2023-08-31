@@ -337,11 +337,106 @@ var config = {
 
 
         {
+            id: 'enter-map',
+            alignment: 'left',
+            hidden: true,
+            //image: 'https://reliablerascal.github.io/bike-far-southeast/images/calumet-park-beach.jpg',
+            //description: 'This section should restore map.',
+            location: {
+                center: [-87.52929693758914,
+                    41.714936581261895],
+                zoom: 14,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: 'enterMap',
+            onChapterEnter: [                  
+            ],
+            onChapterExit: [
+            ]
+        },
+
+
+
+        {
+            id: 'dummy-step1',
+            alignment: 'left',
+            hidden: true,
+            //image: 'https://reliablerascal.github.io/bike-far-southeast/images/calumet-park-beach.jpg',
+            description: 'nothin1',
+            location: {
+                center: [-87.52929693758914,
+                    41.714936581261895],
+                zoom: 14,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            //callback: 'enterMap',
+            onChapterEnter: [                  
+            ],
+            onChapterExit: [
+            ]
+        },
+        
+        
+        
+        {
+            id: 'dummy-step2',
+            alignment: 'left',
+            hidden: true,
+            //image: 'https://reliablerascal.github.io/bike-far-southeast/images/calumet-park-beach.jpg',
+            description: 'nothin2',
+            location: {
+                center: [-87.52929693758914,
+                    41.714936581261895],
+                zoom: 14,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            //callback: 'enterMap',
+            onChapterEnter: [                  
+            ],
+            onChapterExit: [
+            ]
+        },
+        
+        
+        {
+            id: 'dummy-step3',
+            alignment: 'left',
+            hidden: true,
+            //image: 'https://reliablerascal.github.io/bike-far-southeast/images/calumet-park-beach.jpg',
+            description: 'nothin3',
+            location: {
+                center: [-87.52929693758914,
+                    41.714936581261895],
+                zoom: 14,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            //callback: 'enterMap',
+            onChapterEnter: [                  
+            ],
+            onChapterExit: [
+            ]
+        },
+        
+        
+        
+        {
             id: 'exit-map',
             alignment: 'left',
-            hidden: false,
+            hidden: true,
             //image: 'https://reliablerascal.github.io/bike-far-southeast/images/calumet-park-beach.jpg',
-            description: 'This section should scroll out.',
+            //description: 'This section should scroll out.',
             location: {
                 center: [-87.52929693758914,
                     41.714936581261895],

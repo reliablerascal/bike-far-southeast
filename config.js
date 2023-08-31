@@ -19,6 +19,33 @@ var config = {
     // leadParagraph: 'Hegewisch and East Side, Chicago’s southeasternmost neighborhoods, possess an abundance of park space, including Eggers Grove, Wolf Lake, Calumet Park, and Hegewisch Marsh Park. The I-90 expressway and major streets including 106th Street and Ewing Avenue facilitate automobile access for far away visitors. But these resources remain underutilized, in part because access remains treacherous for local residents– especially cyclists.',
     chapters: [
         {
+            id: 'hide-header',
+            alignment: 'left',
+            hidden: true,
+            //image: 'https://reliablerascal.github.io/bike-far-southeast/images/calumet-park-beach.jpg',
+            //description: 'This section should restore map.',
+            location: {
+                center: [-87.52929693758914,
+                    41.714936581261895],
+                zoom: 14,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: 'enterMapTop',
+            onChapterEnter: [                  
+            ],
+            onChapterExit: [
+            ]
+        },
+        
+        
+        
+        
+        
+        
+        {
             id: 'header-photo',
             alignment: 'full',
             hidden: true,

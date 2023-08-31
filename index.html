@@ -24,7 +24,7 @@
             color:#E3AE50;
         }
         #map {
-            top: 0;
+            top: 60px;
             height: 100vh;
             width:100vw;
             position: fixed;
@@ -127,6 +127,9 @@
 </head>
 <body>
 
+<!-- <div id="narr">
+    and-a how 'bout this whole section above the map<br>does this work?<br>HELLO<br>hello<br>HELLO<br>hulluh<br>there's more to the story huh<br>more to the story HA<br>more to the story HO!<br>
+</div> -->
 <div id="map"></div>
 <div id="story"></div>
 <!-- this adds text at the bottom, which can be seen as long as you can scroll out of the map--->
@@ -154,10 +157,15 @@ var alignments = {
     'full': 'fully'
 }
 
-//testing callback function RR 8/31/23
+//RR 8/31/23 to scroll in and out of map
 function exitMap() {
     console.log('attempting to scroll out');
     document.getElementById('map').style.position = 'relative';
+}
+
+function enterMapTop() {
+    console.log('shift map up');
+    document.getElementById('map').style.top = 0;
 }
 
 function enterMap() {

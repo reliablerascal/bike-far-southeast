@@ -13,7 +13,7 @@ var config = {
     auto: false,
     title: 'PROTOTYPE- Far South Side Bike Access',
     subtitle: 'Chicago\'s Southeast side possesses a wealth of waterfront and park space, but bikers can\'t yet safely access it.',
-    byline: 'By Rob Reid | 30 August',
+    byline: 'By Rob Reid | 31 August',
     footer: 'See GitHub repository for methodology and data.<br>Created based on the <a href="https://github.com/mapbox/storytelling" target="_blank">Mapbox Storytelling</a> template.',
     leadPhoto: 'https://reliablerascal.github.io/bike-far-southeast/images/calumet-park-beach-fence-16-9.jpg',
     // leadParagraph: 'Hegewisch and East Side, Chicago’s southeasternmost neighborhoods, possess an abundance of park space, including Eggers Grove, Wolf Lake, Calumet Park, and Hegewisch Marsh Park. The I-90 expressway and major streets including 106th Street and Ewing Avenue facilitate automobile access for far away visitors. But these resources remain underutilized, in part because access remains treacherous for local residents– especially cyclists.',

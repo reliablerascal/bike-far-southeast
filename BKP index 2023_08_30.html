@@ -30,6 +30,26 @@
             position: fixed;
             /*opacity:0.1;*/
         }
+        /* #mapInset {
+            bottom:50px;
+            right:30px;
+            height: 180px;
+            width:250px;
+            max-width:100%;
+            position: fixed;
+            z-index: 1;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+            pointer-events: none;
+        } */
+        #mapInset .mapboxgl-ctrl-bottom-left{
+            display: none;
+        }
+        @media (max-width: 500px) {
+            #mapInset {
+                display: none;
+            }
+        }
         #header {
             margin: auto;
             width: 100%;
@@ -126,11 +146,9 @@
         </style>
 </head>
 <body>
-
 <div id="map"></div>
+<div id="mapInset"></div>
 <div id="story"></div>
-<!-- this adds text at the bottom, but it's covered by the map. how to scroll out of the map?--->
-    <div id="narr">this is the section past the map<br>HELLO<br>hello<br>HELLO<br>hulluh</div>
 
 <script src="./config.js"></script>
 <script>
@@ -150,13 +168,6 @@ var alignments = {
     'center': 'centered',
     'right': 'righty',
     'full': 'fully'
-}
-
-//testing callback function RR 8/31/23
-//document.getElementById('map').style.opacity = 0;
-function exitMap() {
-    console.log('attempting to scroll out');
-    document.getElementById('map').style.position = 'relative';
 }
 
 function getLayerPaintType(layer) {
@@ -300,6 +311,22 @@ var map = new mapboxgl.Map({
     projection: config.projection
 });
 
+// Create a inset map if enabled in config.js
+if (config.inset) {
+ var insetMap = new mapboxgl.Map({
+    container: 'mapInset', // container id
+    style: 'mapbox://styles/mapbox/dark-v10', //hosted style id
+    center: config.chapters[0].location.center,
+    // Hardcode above center value if you want insetMap to be static.
+    zoom: 3, // starting zoom
+    hash: false,
+    interactive: false,
+    attributionControl: false,
+    //Future: Once official mapbox-gl-js has globe view enabled,
+    //insetmap can be a globe with the following parameter.
+    //projection: 'globe'
+  });
+}
 
 if (config.showMarkers) {
     var marker = new mapboxgl.Marker({ color: config.markerColor });
@@ -404,6 +431,35 @@ map.on("load", function() {
      });
 
 
+
+
+    
+    // if (config.use3dTerrain) {
+    //     map.addSource('mapbox-dem', {
+    //         'type': 'raster-dem',
+    //         'url': 'mapbox://mapbox.mapbox-terrain-dem-v1',
+    //         'tileSize': 512,
+    //         'maxzoom': 14
+    //     });
+    //     // add the DEM source as a terrain layer with exaggerated height
+    //     map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1.5 });
+
+    //     // add a sky layer that will show when the map is highly pitched
+    //     map.addLayer({
+    //         'id': 'sky',
+    //         'type': 'sky',
+    //         'paint': {
+    //             'sky-type': 'atmosphere',
+    //             'sky-atmosphere-sun': [0.0, 0.0],
+    //             'sky-atmosphere-sun-intensity': 15
+    //         }
+    //     });
+    // };
+
+    // As the map moves, grab and update bounds in inset map.
+    if (config.inset) {
+    map.on('move', getInsetBounds);
+    }
     // setup the instance, pass callback functions
     scroller
     .setup({
@@ -425,6 +481,14 @@ map.on("load", function() {
         // Incase you do not want to have a dynamic inset map,
         // rather want to keep it a static view but still change the
         // bbox as main map move: comment out the below if section.
+        if (config.inset) {
+          if (chapter.location.zoom < 5) {
+            insetMap.flyTo({center: chapter.location.center, zoom: 0});
+          }
+          else {
+            insetMap.flyTo({center: chapter.location.center, zoom: 3});
+          }
+        }
         if (config.showMarkers) {
             marker.setLngLat(chapter.location.center);
         }
@@ -465,6 +529,95 @@ map.on("load", function() {
         document.querySelectorAll('[data-scrollama-index="0"]')[0].scrollIntoView();
     }
 });
+
+/////////////////////////////////////////////
+//                                         //
+//         Helper functions for insetmap   //
+//                                         //
+/////////////////////////////////////////////
+
+function getInsetBounds() {
+            let bounds = map.getBounds();
+
+            let boundsJson = {
+                "type": "FeatureCollection",
+                "features": [{
+                    "type": "Feature",
+                    "properties": {},
+                    "geometry": {
+                        "type": "Polygon",
+                        "coordinates": [
+                            [
+                                [
+                                    bounds._sw.lng,
+                                    bounds._sw.lat
+                                ],
+                                [
+                                    bounds._ne.lng,
+                                    bounds._sw.lat
+                                ],
+                                [
+                                    bounds._ne.lng,
+                                    bounds._ne.lat
+                                ],
+                                [
+                                    bounds._sw.lng,
+                                    bounds._ne.lat
+                                ],
+                                [
+                                    bounds._sw.lng,
+                                    bounds._sw.lat
+                                ]
+                            ]
+                        ]
+                    }
+                }]
+            }
+
+            if (initLoad) {
+                addInsetLayer(boundsJson);
+                initLoad = false;
+            } else {
+                updateInsetLayer(boundsJson);
+            }
+
+        }
+
+function addInsetLayer(bounds) {
+    insetMap.addSource('boundsSource', {
+        'type': 'geojson',
+        'data': bounds
+    });
+
+    insetMap.addLayer({
+        'id': 'boundsLayer',
+        'type': 'fill',
+        'source': 'boundsSource', // reference the data source
+        'layout': {},
+        'paint': {
+            'fill-color': '#fff', // blue color fill
+            'fill-opacity': 0.2
+        }
+    });
+    // // Add a black outline around the polygon.
+    insetMap.addLayer({
+        'id': 'outlineLayer',
+        'type': 'line',
+        'source': 'boundsSource',
+        'layout': {},
+        'paint': {
+            'line-color': '#000',
+            'line-width': 1
+        }
+    });
+}
+
+function updateInsetLayer(bounds) {
+    insetMap.getSource('boundsSource').setData(bounds);
+}
+
+
+
 
 
 // setup resize event

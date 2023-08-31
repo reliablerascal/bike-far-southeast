@@ -332,8 +332,31 @@ var config = {
                 {layer: 'calumet-beach', opacity:0},
                 {layer: 'park-calumet', opacity:0}
             ]
-        }
+        },
         
+
+
+        {
+            id: 'exit-map',
+            alignment: 'left',
+            hidden: false,
+            //image: 'https://reliablerascal.github.io/bike-far-southeast/images/calumet-park-beach.jpg',
+            description: 'This section should scroll out.',
+            location: {
+                center: [-87.52929693758914,
+                    41.714936581261895],
+                zoom: 14,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: 'exitMap',
+            onChapterEnter: [                  
+            ],
+            onChapterExit: [
+            ]
+        }
         
         
 //end chapters

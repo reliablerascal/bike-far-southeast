@@ -24,8 +24,8 @@
             color:#E3AE50;
         }
         #map {
-            top: 2092px; /*set starting location of map container */
-            height: 100vh;
+            top: 0; /* 0px will put it at the top of the map container, not the top of the document*/
+            height:100vh;
             width:100vw;
             position: relative;
             /*opacity:0.1;*/
@@ -118,6 +118,10 @@
             }
         }
 
+        /*attempt to add my own styling */
+        
+        /* */
+
         /* Fix issue on mobile browser where scroll breaks  */
         .mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan,
         .mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan .mapboxgl-canvas {
@@ -132,19 +136,29 @@
     and-a how 'bout this whole section above the map<br>does this work?<br>HELLO<br>hello<br>HELLO<br>hulluh<br>there's more to the story huh<br>more to the story HA<br>more to the story HO!<br>
 </div> -->
 
-<!--- reconstructing the header, hard-coded-->
-<div id="intro">
-'PROTOTYPE- Far South Side Bike Access',
-    subtitle: 'Chicago\'s Southeast side possesses a wealth of waterfront and park space, but bikers can\'t yet safely access it.',
-    byline: 'By Rob Reid | 31 August',
-<img src="https://reliablerascal.github.io/bike-far-southeast/images/calumet-park-beach-fence-16-9.jpg"></img>
+<!--- hard-coded header-->
+<!--- main and neve div needed to implement hpmoon styles-->
+<main id="content" class="neve-main" role="main">
+    <!-- <div class="container single-post-container"> -->
+        <div id="intro">
+    <h1>PROTOTYPE- Far Southeast Side Bike Access</h1>
+    <h3><em>Chicago's Southeast side possesses a wealth of waterfront and park space, but bikers can't yet safely access it.</em></h3>
+    <p>by Rob Reid<br>
+    31 August<br>
+    <p><em>See <a href="https://github.com/reliablerascal/bike-far-southeast">GitHub repository</a> for methodology</em>
+    <br>
+<img src="https://reliablerascal.github.io/bike-far-southeast/images/calumet-park-beach-fence-16-9.jpg"></img><!---the image is 2400 wide by 1350 high-->
+<!-- </div> -->
 </div>
+
 
 <div id="map"></div>
 <div id="story"></div>
 <!-- this adds text at the bottom, which can be seen as long as you can scroll out of the map--->
     <div id="narr">
+       <p> <!--- for hp moon style-->
         this is the section past the map<br>HELLO<br>hello<br>HELLO<br>hulluh<br>there's more to the story huh<br>more to the story HA<br>more to the story HO!<br>
+       </p>
     </div>
 
 <script src="./config.js"></script>
@@ -175,22 +189,22 @@ function enterMapTop() {
     document.getElementById('map').style.position = 'fixed';
 }
 
-function exitMapTop() {
-    console.log('re-exiting map bottom, pixel ' + window.scrollY);
-    document.getElementById('map').style.top = 0;
-    document.getElementById('map').style.position = 'relative';
-}
-
-function exitMap() {
+function exitMapBottom() {
     console.log('exiting map bottom, pixel ' + window.scrollY);
-    document.getElementById('map').style.top = '15337px';
+    document.getElementById('map').style.top = '11362px';
     document.getElementById('map').style.position = 'relative';
 }
 
-function enterMap() {
+function reEnterMapBottom() {
     console.log('re-entering map bottom, pixel ' + window.scrollY);
     document.getElementById('map').style.top = 0;
     document.getElementById('map').style.position = 'fixed';
+}
+
+function reExitMapTop() {
+    console.log('re-exiting map bottom, pixel ' + window.scrollY);
+    document.getElementById('map').style.top = 0;
+    document.getElementById('map').style.position = 'relative';
 }
 
 function getLayerPaintType(layer) {
@@ -446,8 +460,10 @@ map.on("load", function() {
     scroller
     .setup({
         step: '.step',
-        offset: 0.5,
+        offset: 1, //1 = begins when container hits top, 0.5 begins when it's 1/2 screen up
         progress: true
+    //    , debug: true
+        /*creates a line to see where scroller initiates */
     })
     .onStepEnter(async response => {
         //D3 STEP 3
@@ -510,4 +526,5 @@ window.addEventListener('resize', scroller.resize);
 
 </script>
 </body>
+</main><!---close out hp moon style-->
 </html>

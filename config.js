@@ -1,6 +1,7 @@
 var config = {
     style: 'mapbox://styles/robcat26/cllfi4uo901m701qleb6n02ik',
-    accessToken: 'pk.eyJ1Ijoicm9iY2F0MjYiLCJhIjoiY2xrZTBrejIwMHp0YjNmcXZiaWN1enZwNiJ9._g79-Ecyuo5ahLVN3pyZZw',
+    accessToken: 'pk.eyJ1Ijoicm9iY2F0MjYiLCJhIjoiY2xtMHpwNmtpMGV4ZTNkbTFmazczNXJqNSJ9.l9P-WMfiDKXg4Iv74yVueA',
+    //accessToken: 'pk.eyJ1Ijoicm9iY2F0MjYiLCJhIjoiY2xrZTBrejIwMHp0YjNmcXZiaWN1enZwNiJ9._g79-Ecyuo5ahLVN3pyZZw',
 
     showMarkers: false,
     markerColor: '#3FB1CE',

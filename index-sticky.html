@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset='utf-8' />
-    <title>South Side Bike</title>
+    <title>Bike Access in Chicago's Far Southeast Side</title>
     
     <!---hpmoon style is completely ignored-->
     <link rel="stylesheet" href="../style/gitrascal.css"> 
@@ -24,11 +24,10 @@
             color:#E3AE50;
         }
         #map {
-            top: 60px;
-            height: 100vh;
+            top: 0; /* 0px will put it at the top of the map container, not the top of the document*/
+            height:100vh;  /* per https://github.com/russellsamora/scrollama should avoid using vh?! */
             width:100vw;
-            position: fixed;
-            /*opacity:0.1;*/
+            position: sticky;
         }
         #header {
             margin: auto;
@@ -52,9 +51,10 @@
             position: relative;
             z-index: 5;
         }
+        /*I think these are the chapters */
         #features {
             padding-top: 10vh;
-            padding-bottom: 10vh;
+            padding-bottom: 1dvh;
         }
         /* @media (max-width: 750px) {
             #features {
@@ -117,6 +117,10 @@
             }
         }
 
+        /*attempt to add my own styling */
+        
+        /* */
+
         /* Fix issue on mobile browser where scroll breaks  */
         .mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan,
         .mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan .mapboxgl-canvas {
@@ -130,11 +134,30 @@
 <!-- <div id="narr">
     and-a how 'bout this whole section above the map<br>does this work?<br>HELLO<br>hello<br>HELLO<br>hulluh<br>there's more to the story huh<br>more to the story HA<br>more to the story HO!<br>
 </div> -->
+
+<!--- hard-coded header-->
+<!--- main and neve div needed to implement hpmoon styles-->
+<main id="content" class="neve-main" role="main">
+    <!-- <div class="container single-post-container"> -->
+        <div id="intro">
+    <h1>PROTOTYPE- Far Southeast Side Bike Access</h1>
+    <h3><em>Chicago's Southeast side possesses a wealth of waterfront and park space, but bikers can't yet safely access it.</em></h3>
+    <p>by Rob Reid<br>
+    31 August<br>
+    <p><em>See <a href="https://github.com/reliablerascal/bike-far-southeast">GitHub repository</a> for methodology</em>
+    <br>
+<img src="https://reliablerascal.github.io/bike-far-southeast/images/calumet-park-beach-fence-16-9.jpg"></img><!---the image is 2400 wide by 1350 high-->
+<!-- </div> -->
+</div>
+
+
 <div id="map"></div>
 <div id="story"></div>
 <!-- this adds text at the bottom, which can be seen as long as you can scroll out of the map--->
     <div id="narr">
+       <p> <!--- for hp moon style-->
         this is the section past the map<br>HELLO<br>hello<br>HELLO<br>hulluh<br>there's more to the story huh<br>more to the story HA<br>more to the story HO!<br>
+       </p>
     </div>
 
 <script src="./config.js"></script>
@@ -158,19 +181,29 @@ var alignments = {
 }
 
 //RR 8/31/23 to scroll in and out of map
-function exitMap() {
-    console.log('attempting to scroll out');
-    document.getElementById('map').style.position = 'relative';
-}
-
+//used window.scrollY to determine exact location where map should be fixed
 function enterMapTop() {
-    console.log('shift map up');
-    document.getElementById('map').style.top = 0;
+    // console.log('entering map at top, pixel ' + window.scrollY);
+    // document.getElementById('map').style.top = 0;
+    // document.getElementById('map').style.position = 'fixed';
 }
 
-function enterMap() {
-    console.log('attempting to scroll out');
-    document.getElementById('map').style.position = 'fixed';
+function exitMapBottom() {
+    // console.log('exiting map bottom, pixel ' + window.scrollY);
+    // document.getElementById('map').style.top = '11575px';
+    // document.getElementById('map').style.position = 'relative';
+}
+
+function reEnterMapBottom() {
+    // console.log('re-entering map bottom, pixel ' + window.scrollY);
+    // document.getElementById('map').style.top = 0;
+    // document.getElementById('map').style.position = 'fixed';
+}
+
+function reExitMapTop() {
+    // console.log('re-exiting map bottom, pixel ' + window.scrollY);
+    // document.getElementById('map').style.top = 0;
+    // document.getElementById('map').style.position = 'relative';
 }
 
 function getLayerPaintType(layer) {
@@ -201,31 +234,35 @@ var story = document.getElementById('story');
 var features = document.createElement('div');
 features.setAttribute('id', 'features');
 
-var header = document.createElement('div');
+/*
+RR 8/31/23
+removing header here to get it out of the map container
+*/
+// var header = document.createElement('div');
 
-if (config.title) {
-    var titleText = document.createElement('h1');
-    titleText.innerText = config.title;
-    header.appendChild(titleText);
-}
+// if (config.title) {
+//     var titleText = document.createElement('h1');
+//     titleText.innerText = config.title;
+//     header.appendChild(titleText);
+// }
 
-if (config.subtitle) {
-    var subtitleText = document.createElement('h2');
-    subtitleText.innerText = config.subtitle;
-    header.appendChild(subtitleText);
-}
+// if (config.subtitle) {
+//     var subtitleText = document.createElement('h2');
+//     subtitleText.innerText = config.subtitle;
+//     header.appendChild(subtitleText);
+// }
 
-if (config.byline) {
-    var bylineText = document.createElement('p');
-    bylineText.innerText = config.byline;
-    header.appendChild(bylineText);
-}
+// if (config.byline) {
+//     var bylineText = document.createElement('p');
+//     bylineText.innerText = config.byline;
+//     header.appendChild(bylineText);
+// }
 
-if (config.leadPhoto) {
-    var image = new Image();
-        image.src = config.leadPhoto;
-        header.appendChild(image);
-}
+// if (config.leadPhoto) {
+//     var image = new Image();
+//         image.src = config.leadPhoto;
+//         header.appendChild(image);
+// }
 
 // if (config.leadParagraph) {
 //     var leadText = document.createElement('p');
@@ -233,11 +270,11 @@ if (config.leadPhoto) {
 //     header.appendChild(leadText);
 // }
 
-if (header.innerText.length > 0) {
-    header.classList.add(config.theme);
-    header.setAttribute('id', 'header');
-    story.appendChild(header);
-}
+// if (header.innerText.length > 0) {
+//     header.classList.add(config.theme);
+//     header.setAttribute('id', 'header');
+//     story.appendChild(header);
+// }
 
 config.chapters.forEach((record, idx) => {
     var container = document.createElement('div');
@@ -330,7 +367,7 @@ map.on("load", function() {
     //adding code here via Steph to incorporate my own GeoJSON points layer
     map.addSource('trailMarkers', {
          'type': 'geojson',
-         'data': 'data/bike-wolf-lake-points.geojson'
+         'data': 'https://reliablerascal.github.io/bike-far-southeast/data/bike-wolf-lake-points.geojson'
      });
      map.addLayer({
          'id': 'henry-booth',
@@ -422,8 +459,10 @@ map.on("load", function() {
     scroller
     .setup({
         step: '.step',
-        offset: 0.5,
+        offset: 1, //1 = begins when container hits top, 0.5 begins when it's 1/2 screen up
         progress: true
+    //    , debug: true
+        /*creates a line to see where scroller initiates */
     })
     .onStepEnter(async response => {
         //D3 STEP 3
@@ -486,4 +525,5 @@ window.addEventListener('resize', scroller.resize);
 
 </script>
 </body>
+</main><!---close out hp moon style-->
 </html>

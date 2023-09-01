@@ -25,10 +25,9 @@
         }
         #map {
             top: 0; /* 0px will put it at the top of the map container, not the top of the document*/
-            height:100vh;
+            height:100vh;  /* per https://github.com/russellsamora/scrollama should avoid using vh?! */
             width:100vw;
             position: relative;
-            /*opacity:0.1;*/
         }
         #header {
             margin: auto;
@@ -191,7 +190,7 @@ function enterMapTop() {
 
 function exitMapBottom() {
     console.log('exiting map bottom, pixel ' + window.scrollY);
-    document.getElementById('map').style.top = '11362px';
+    document.getElementById('map').style.top = '11575px';
     document.getElementById('map').style.position = 'relative';
 }
 

@@ -58,8 +58,7 @@ var config = {
             },
             mapAnimation: 'flyTo',
             rotateAnimation: false,
-            callback: '',
-            //callback: 'enterMapTop',
+            callback: 'enterMapTop',
             onChapterEnter: [                  
             ],
             onChapterExit: [
@@ -425,7 +424,7 @@ var config = {
             },
             mapAnimation: 'flyTo',
             rotateAnimation: false,
-            callback: '',
+            //callback: 'enterMap',
             onChapterEnter: [                  
             ],
             onChapterExit: [
@@ -496,8 +495,7 @@ var config = {
             },
             mapAnimation: 'flyTo',
             rotateAnimation: false,
-            callback:'',
-            //callback: 'exitMapBottom',
+            callback: 'exitMapBottom',
             onChapterEnter: [                  
             ],
             onChapterExit: [

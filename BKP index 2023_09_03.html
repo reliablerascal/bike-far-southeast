@@ -131,11 +131,15 @@
 </head>
 <body>
 
+<!-- <div id="narr">
+    and-a how 'bout this whole section above the map<br>does this work?<br>HELLO<br>hello<br>HELLO<br>hulluh<br>there's more to the story huh<br>more to the story HA<br>more to the story HO!<br>
+</div> -->
+
 <!--- hard-coded header-->
 <!--- main and neve div needed to implement hpmoon styles-->
 <main id="content" class="neve-main" role="main">
     <!-- <div class="container single-post-container"> -->
-<div id="intro">
+        <div id="intro">
     <h1>DRAFT- Far Southeast Side Bike Access</h1>
     <h3><em>Chicago's Southeast side possesses a wealth of waterfront and park space, but bikers can't yet safely access it.</em></h3>
     <p>by Rob Reid<br>
@@ -143,32 +147,18 @@
     <p><em>See <a href="https://github.com/reliablerascal/bike-far-southeast">GitHub repository</a> for methodology</em>
     <br>
 <img src="https://reliablerascal.github.io/bike-far-southeast/images/calumet-park-beach-fence-16-9.jpg"></img><!---the image is 2400 wide by 1350 high-->
-<br>hobgoblaroblin boblin to the scoblin
-        <br>hobgoblaroblin boblin to the androscoblin
-        <br>hobgoblaroblin boblin to the androscoblin
-        <br>hobgoblaroblin boblin to the androscoblin
-        
+<!-- </div> -->
 </div>
 
 
 <div id="map"></div>
-<div id="story"></div><!-- this is the narrative corresponding to the map, as coded in config.js chapters--->
+<div id="story"></div>
 <!-- this adds text at the bottom, which can be seen as long as you can scroll out of the map--->
-<div id="outro">
-    <p> hobgoblaroblin boblin to the scoblin
-        <br>hobgoblaroblin boblin to the scoblin
-        <br>hobgoblaroblin boblin to the androscoblin
-        <br>hobgoblaroblin boblin to the androscoblin
-        <br>hobgoblaroblin boblin to the androscoblin
-        <br>hobgoblaroblin boblin to the androscoblin
-        <br>hobgoblaroblin boblin to the androscoblin
-        <br>hobgoblaroblin boblin to the androscoblin
-        <br>hobgoblaroblin boblin to the androscoblin
-        <br>hobgoblaroblin boblin to the androscoblin
-        <br>hobgoblaroblin boblin to the androscoblin
-        <br>hobgoblaroblin boblin to the androscoblin
-        <!--- for hp moon style--></p>
-</div>
+    <div id="narr">
+       <p> <!--- for hp moon style-->
+        this is the section past the map<br>HELLO<br>hello<br>HELLO<br>hulluh<br>there's more to the story huh<br>more to the story HA<br>more to the story HO!<br>
+       </p>
+    </div>
 
 <script src="https://reliablerascal.github.io/bike-far-southeast/config.js"></script>
 <!-- <script src="./config.js"></script> -->
@@ -193,29 +183,29 @@ var alignments = {
 
 //RR 8/31/23 to scroll in and out of map
 //used window.scrollY to determine exact location where map should be fixed
-// function enterMapTop() {
-//     console.log('entering map at top, pixel ' + window.scrollY);
-//     document.getElementById('map').style.top = 0;
-//     document.getElementById('map').style.position = 'fixed';
-// }
+function enterMapTop() {
+    console.log('entering map at top, pixel ' + window.scrollY);
+    document.getElementById('map').style.top = 0;
+    document.getElementById('map').style.position = 'fixed';
+}
 
-// function exitMapBottom() {
-//     console.log('exiting map bottom, pixel ' + window.scrollY);
-//     document.getElementById('map').style.top = '11575px';
-//     document.getElementById('map').style.position = 'relative';
-// }
+function exitMapBottom() {
+    console.log('exiting map bottom, pixel ' + window.scrollY);
+    document.getElementById('map').style.top = '11575px';
+    document.getElementById('map').style.position = 'relative';
+}
 
-// function reEnterMapBottom() {
-//     console.log('re-entering map bottom, pixel ' + window.scrollY);
-//     document.getElementById('map').style.top = 0;
-//     document.getElementById('map').style.position = 'fixed';
-// }
+function reEnterMapBottom() {
+    console.log('re-entering map bottom, pixel ' + window.scrollY);
+    document.getElementById('map').style.top = 0;
+    document.getElementById('map').style.position = 'fixed';
+}
 
-// function reExitMapTop() {
-//     console.log('re-exiting map bottom, pixel ' + window.scrollY);
-//     document.getElementById('map').style.top = 0;
-//     document.getElementById('map').style.position = 'relative';
-// }
+function reExitMapTop() {
+    console.log('re-exiting map bottom, pixel ' + window.scrollY);
+    document.getElementById('map').style.top = 0;
+    document.getElementById('map').style.position = 'relative';
+}
 
 function getLayerPaintType(layer) {
     var layerType = map.getLayer(layer).type;

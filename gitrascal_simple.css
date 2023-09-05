@@ -1,0 +1,35 @@
+/*9/4/23 new stylesheet created from scratch */
+/* created this to help troubleshoot problems with sticky map for Southeast Side bike story
+/*
+cream #F4F7D9
+gold #E3AE50
+night blue #0D506D
+*/
+
+body {
+    background-color: #0D506D;
+    color: #F4F7D9;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Style the h1 element */
+  h1 {
+    font-size: 36px;
+    color: #F4F7D9; /* Text color for h1 */
+  }
+  
+  /* Style the h3 element */
+  h3 {
+    font-size: 24px;
+    color: #F4F7D9; /* Text color for h3 */
+  }
+  
+  /* Style hyperlinks */
+  a {
+    color: #E3AE50; /* Link text color */
+    text-decoration: none; /* Remove underlines from links */
+  }
+  
+  a:hover {
+    text-decoration: underline; /* Add underline on hover */
+  }

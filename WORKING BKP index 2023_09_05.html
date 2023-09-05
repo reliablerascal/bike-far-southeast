@@ -1,3 +1,4 @@
+<!--- 9/4/23 recommit after failed build-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,7 +6,7 @@
     <title>Bike Access in Chicago's Far Southeast Side</title>
     
     <!---hpmoon style is completely ignored-->
-    <link rel="stylesheet" href="../style/gitrascal.css"> 
+    <link rel="stylesheet" href="gitrascal_simple.css"> 
     
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/mapbox/assembly/publisher-staging/src/svgs/mapbox.svg">
@@ -23,46 +24,19 @@
         a, a:hover, a:visited {
             color:#E3AE50;
         }
+        /* this fixes the map at the top of the map container, which allows scrolling into fixed position from relative position  */
+        /* per https://github.com/russellsamora/scrollama should avoid using vh?! */
         #map {
-            top: 0; /* 0px will put it at the top of the map container, not the top of the document*/
-            height:100vh;
-            width:100vw;
-            position: relative;
-            /*opacity:0.1;*/
-        }
-        #header {
-            margin: auto;
-            width: 100%;
-            position: relative;
-            z-index: 5;
+            position: sticky;
+            top: 0;
+            height:100vh;  
+            width:100%;
         }
         #header h1, #header h2, #header p {
             margin: 0;
             padding: 2vh 2vw;
             text-align: center;
         }
-        #footer {
-            width: 100%;
-            min-height: 5vh;
-            padding-top: 2vh;
-            padding-bottom: 2vh;
-            text-align: center;
-            line-height: 25px;
-            font-size: 13px;
-            position: relative;
-            z-index: 5;
-        }
-        /*I think these are the chapters */
-        #features {
-            padding-top: 10vh;
-            padding-bottom: 1dvh;
-        }
-        /* @media (max-width: 750px) {
-            #features {
-                width: 90vw;
-                margin: 0 auto;
-            }
-        } */
         .hidden {
             visibility: hidden;
         }
@@ -111,12 +85,12 @@
             width: 100%;
         }
 
-        @media (max-width: 750px) {
+        /* @media (max-width: 750px) {
             .centered, .lefty, .righty, .fully {
-                width: 90vw;
+                width: 100vw;
                 margin: 0 auto;
             }
-        }
+        } */
 
         /*attempt to add my own styling */
         
@@ -132,36 +106,48 @@
 </head>
 <body>
 
-<!-- <div id="narr">
-    and-a how 'bout this whole section above the map<br>does this work?<br>HELLO<br>hello<br>HELLO<br>hulluh<br>there's more to the story huh<br>more to the story HA<br>more to the story HO!<br>
-</div> -->
-
 <!--- hard-coded header-->
 <!--- main and neve div needed to implement hpmoon styles-->
-<main id="content" class="neve-main" role="main">
+
+<!---<main id="content" class="neve-main" role="main">--->
     <!-- <div class="container single-post-container"> -->
-        <div id="intro">
-    <h1>PROTOTYPE- Far Southeast Side Bike Access</h1>
+
+<main id="project-wrapper">
+<div id="intro">
+    <h1>DRAFT- Far Southeast Side Bike Access</h1>
     <h3><em>Chicago's Southeast side possesses a wealth of waterfront and park space, but bikers can't yet safely access it.</em></h3>
     <p>by Rob Reid<br>
     31 August<br>
     <p><em>See <a href="https://github.com/reliablerascal/bike-far-southeast">GitHub repository</a> for methodology</em>
     <br>
-<img src="https://reliablerascal.github.io/bike-far-southeast/images/calumet-park-beach-fence-16-9.jpg"></img><!---the image is 2400 wide by 1350 high-->
-<!-- </div> -->
+<img src="https://reliablerascal.github.io/bike-far-southeast/images/calumet-park-beach-fence-16-9.jpg" style="width: 50%;"></img><!---the image is 2400 wide by 1350 high-->
 </div>
 
-
 <div id="map"></div>
-<div id="story"></div>
+<div id="story"></div><!-- this is the narrative corresponding to the map, as coded in config.js chapters--->
 <!-- this adds text at the bottom, which can be seen as long as you can scroll out of the map--->
-    <div id="narr">
-       <p> <!--- for hp moon style-->
-        this is the section past the map<br>HELLO<br>hello<br>HELLO<br>hulluh<br>there's more to the story huh<br>more to the story HA<br>more to the story HO!<br>
-       </p>
-    </div>
+</main>
 
-<script src="./config.js"></script>
+<footer>
+<div id="outro">
+    <p> hobgoblaroblin boblin to the scoblin
+        <br>hobgoblaroblin boblin to the scoblin
+        <br>hobgoblaroblin boblin to the androscoblin
+        <br>hobgoblaroblin boblin to the androscoblin
+        <br>hobgoblaroblin boblin to the androscoblin
+        <br>hobgoblaroblin boblin to the androscoblin
+        <br>hobgoblaroblin boblin to the androscoblin
+        <br>hobgoblaroblin boblin to the androscoblin
+        <br>hobgoblaroblin boblin to the androscoblin
+        <br>hobgoblaroblin boblin to the androscoblin
+        <br>hobgoblaroblin boblin to the androscoblin
+        <br>hobgoblaroblin boblin to the androscoblin
+        <!--- for hp moon style--></p>
+</div>
+</footer>
+
+<script src="https://reliablerascal.github.io/bike-far-southeast/config.js"></script>
+<!-- <script src="./config.js"></script> -->
 <script>
 var initLoad = true;
 var layerTypes = {
@@ -179,32 +165,6 @@ var alignments = {
     'center': 'centered',
     'right': 'righty',
     'full': 'fully'
-}
-
-//RR 8/31/23 to scroll in and out of map
-//used window.scrollY to determine exact location where map should be fixed
-function enterMapTop() {
-    console.log('entering map at top, pixel ' + window.scrollY);
-    document.getElementById('map').style.top = 0;
-    document.getElementById('map').style.position = 'fixed';
-}
-
-function exitMapBottom() {
-    console.log('exiting map bottom, pixel ' + window.scrollY);
-    document.getElementById('map').style.top = '11575px';
-    document.getElementById('map').style.position = 'relative';
-}
-
-function reEnterMapBottom() {
-    console.log('re-entering map bottom, pixel ' + window.scrollY);
-    document.getElementById('map').style.top = 0;
-    document.getElementById('map').style.position = 'fixed';
-}
-
-function reExitMapTop() {
-    console.log('re-exiting map bottom, pixel ' + window.scrollY);
-    document.getElementById('map').style.top = 0;
-    document.getElementById('map').style.position = 'relative';
 }
 
 function getLayerPaintType(layer) {
@@ -235,50 +195,15 @@ var story = document.getElementById('story');
 var features = document.createElement('div');
 features.setAttribute('id', 'features');
 
-/*
-RR 8/31/23
-removing header here to get it out of the map container
-*/
-// var header = document.createElement('div');
-
-// if (config.title) {
-//     var titleText = document.createElement('h1');
-//     titleText.innerText = config.title;
-//     header.appendChild(titleText);
-// }
-
-// if (config.subtitle) {
-//     var subtitleText = document.createElement('h2');
-//     subtitleText.innerText = config.subtitle;
-//     header.appendChild(subtitleText);
-// }
-
-// if (config.byline) {
-//     var bylineText = document.createElement('p');
-//     bylineText.innerText = config.byline;
-//     header.appendChild(bylineText);
-// }
-
-// if (config.leadPhoto) {
-//     var image = new Image();
-//         image.src = config.leadPhoto;
-//         header.appendChild(image);
-// }
-
-// if (config.leadParagraph) {
-//     var leadText = document.createElement('p');
-//     leadText.innerText = config.leadParagraph;
-//     header.appendChild(leadText);
-// }
-
-// if (header.innerText.length > 0) {
-//     header.classList.add(config.theme);
-//     header.setAttribute('id', 'header');
-//     story.appendChild(header);
-// }
-
 config.chapters.forEach((record, idx) => {
     var container = document.createElement('div');
+
+//RR attempt to set the container height so I can scroll past it. but the container is really the map div
+//container.style.height = '300px';
+//features.style.position = 'relative';
+container.style.border = '1px solid red';
+features.style.border = '10px solid purple';
+
     var chapter = document.createElement('div');
 
     if (record.title) {
@@ -316,19 +241,19 @@ config.chapters.forEach((record, idx) => {
 
 story.appendChild(features);
 
-var footer = document.createElement('div');
+//var footer = document.createElement('div');
+//
+// if (config.footer) {
+//     var footerText = document.createElement('p');
+//     footerText.innerHTML = config.footer;
+//     footer.appendChild(footerText);
+// }
 
-if (config.footer) {
-    var footerText = document.createElement('p');
-    footerText.innerHTML = config.footer;
-    footer.appendChild(footerText);
-}
-
-if (footer.innerText.length > 0) {
-    footer.classList.add(config.theme);
-    footer.setAttribute('id', 'footer');
-    story.appendChild(footer);
-}
+// if (footer.innerText.length > 0) {
+//     footer.classList.add(config.theme);
+//     footer.setAttribute('id', 'footer');
+//     story.appendChild(footer);
+// }
 
 mapboxgl.accessToken = config.accessToken;
 
@@ -460,16 +385,11 @@ map.on("load", function() {
     scroller
     .setup({
         step: '.step',
-        offset: 1, //1 = begins when container hits top, 0.5 begins when it's 1/2 screen up
+        offset: 0.5, //1 = begins when container hits top, 0.5 begins when it's 1/2 screen up
         progress: true
-    //    , debug: true
-        /*creates a line to see where scroller initiates */
+    //    , debug: true //creates a line to see where scroller initiates
     })
     .onStepEnter(async response => {
-        //D3 STEP 3
-        //Larry genius makes dots re-render to correct location (added for D3 connection per Aaron)
-        //map.on("move", render);
-
         var current_chapter = config.chapters.findIndex(chap => chap.id === response.element.id);
         var chapter = config.chapters[current_chapter];
 
@@ -525,6 +445,21 @@ map.on("load", function() {
 window.addEventListener('resize', scroller.resize);
 
 </script>
+
+<div id="outro2">
+    <p>morg bagorg kaforg blorg
+        <br>morg bagorg kaforg blorg
+        <br>morg bagorg kaforg blorg
+        <br>morg bagorg kaforg blorg
+        <br>morg bagorg kaforg blorg
+        <br>morg bagorg kaforg blorg
+        <br>morg bagorg kaforg blorg
+        <br>morg bagorg kaforg blorg
+        <br>morg bagorg kaforg blorg
+        <br>morg bagorg kaforg blorg
+        <br>morg bagorg kaforg blorg
+    </div>
 </body>
-</main><!---close out hp moon style-->
+<!---</main>--->
+<!---close out hp moon style-->
 </html>

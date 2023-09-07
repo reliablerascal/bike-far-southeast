@@ -34,8 +34,16 @@ var config = {
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [
-                {layer: 'bike-path-dot', opacity:0},
-                {layer: 'mapbox-satellite', opacity:0}
+                {layer: 'bike-lanes', opacity:0},
+                {layer: 'burnham-gw-north', opacity:0},
+                {layer: 'burnham-gw-south', opacity:0},
+                {layer: 'burnham-gw-gap', opacity:0},
+                {layer: 'park-calumet', opacity:0},
+                {layer: 'park-calumet-shores', opacity:0},
+                {layer: 'park-eggers-grove', opacity:0},
+                {layer: 'park-hegewisch', opacity:0},
+                {layer: 'park-wolf-lake', opacity:0},
+                {layer: 'parks-all-se', opacity:0}
             ],
             onChapterExit: []
         },
@@ -60,8 +68,10 @@ var config = {
             callback: '',
             onChapterEnter: [ 
                 {layer: 'bike-lanes', opacity:1},
-                {layer: 'bike-path-dot', opacity:0},
-                {layer: 'mapbox-satellite', opacity:0}
+                {layer: 'park-calumet', opacity:0},
+                {layer: 'park-hegewisch', opacity:0},
+                {layer: 'park-wolf-lake', opacity:0},
+                {layer: 'park-eggers-grove', opacity:0}
             ],
             onChapterExit: [
             ]
@@ -77,8 +87,8 @@ var config = {
             description: 'As noted in the Hegewisch plan, the area\'s parks remain underutilized in part because of this limited bike and pedestrian access. As restoration of the area\'s parks is a work in progress, so too are interdependent efforts to improve transit connecting local residents to the parks.',
             location: {
                 center: [-87.55685590723697,
-                    41.659210130018266],
-                zoom: 12,
+                    41.699210130018266],
+                zoom: 11.5,
                 pitch: 0.00,
                 bearing: 0.00
             },
@@ -87,15 +97,12 @@ var config = {
             callback: '',
             onChapterEnter: [ 
                 {layer: 'bike-lanes', opacity:1},
-                {layer: 'bike-path-dot', opacity:1},
-                {layer: 'mapbox-satellite', opacity:0},
                 {layer: 'park-calumet', opacity:0.5},
-                {layer: 'park-hegewisch', opacity:0.5} 
+                {layer: 'park-hegewisch', opacity:0.5},
+                {layer: 'park-wolf-lake', opacity:0.5},
+                {layer: 'park-eggers-grove', opacity:0.5} 
             ],
-            onChapterExit: [
-                {layer: 'bike-lanes', opacity:0},
-                {layer: 'park-calumet', opacity:0},
-                {layer: 'park-hegewisch', opacity:0}
+            onChapterExit: [   
             ]
         },
         
@@ -109,13 +116,13 @@ var config = {
             id: 'subhead-three-islands',
             alignment: 'center',
             hidden: false,
-            title: 'Three Islands in an Asphalt Sea',
+            title: 'Green Islands in an Asphalt Sea',
             //image: './images/henry-booth-house.png',
             // description: 'As noted in the Hegewisch plan, the area\'s parks remain underutilized in part because of this limited bike and pedestrian access. As restoration of the area\'s parks is a work in progress, so too are interdependent efforts to improve transit connecting local residents to the parks.',
             location: {
                 center: [-87.55685590723697,
-                    41.659210130018266],
-                zoom: 12,
+                    41.699210130018266],
+                zoom: 11.5,
                 pitch: 0.00,
                 bearing: 0.00
             },
@@ -124,15 +131,12 @@ var config = {
             callback: '',
             onChapterEnter: [ 
                 {layer: 'bike-lanes', opacity:1},
-                {layer: 'bike-path-dot', opacity:1},
-                {layer: 'mapbox-satellite', opacity:0},
                 {layer: 'park-calumet', opacity:0.5},
-                {layer: 'park-hegewisch', opacity:0.5} 
+                {layer: 'park-hegewisch', opacity:0.5},
+                {layer: 'park-wolf-lake', opacity:0.5},
+                {layer: 'park-eggers-grove', opacity:0.5} 
             ],
             onChapterExit: [
-                {layer: 'bike-lanes', opacity:0},
-                {layer: 'park-calumet', opacity:0},
-                {layer: 'park-hegewisch', opacity:0}
             ]
         },
         
@@ -158,14 +162,13 @@ var config = {
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [ 
-                {layer: 'calumet-beach', opacity:1},
-                {layer: 'bike-path-dot', opacity:1},
-                {layer: 'mapbox-satellite', opacity:0},
-                {layer: 'park-calumet', opacity:0.5}                 
+                {layer: 'bike-lanes', opacity:0},
+                {layer: 'park-calumet', opacity:0.5},
+                {layer: 'park-hegewisch', opacity:0},
+                {layer: 'park-wolf-lake', opacity:0},
+                {layer: 'park-eggers-grove', opacity:0}                 
             ],
             onChapterExit: [
-                {layer: 'calumet-beach', opacity:0},
-                {layer: 'park-calumet', opacity:0}
             ]
         },
         
@@ -178,9 +181,8 @@ var config = {
             //image: 'https://reliablerascal.github.io/bike-far-southeast/images/calumet-park-beach.jpg',
             description: 'A few hundred yards from the Indiana state border, it\'s also only a few miles south of Chicago\'s 18-mile continuous stretch of lakefront trail.',
             location: {
-                center: [-87.52929693758914,
-                    41.714936581261895],
-                zoom: 14,
+                center: [-87.55741, 41.75353],
+                zoom: 11.43,
                 pitch: 0.00,
                 bearing: 0.00
             },
@@ -188,14 +190,10 @@ var config = {
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [ 
-                {layer: 'calumet-beach', opacity:1},
-                {layer: 'bike-path-dot', opacity:1},
-                {layer: 'mapbox-satellite', opacity:0},
-                {layer: 'park-calumet', opacity:0.5}                 
+                {layer: 'park-calumet', opacity:0.5},
+                {layer: 'parks-all-se', opacity:0}                 
             ],
             onChapterExit: [
-                {layer: 'calumet-beach', opacity:0},
-                {layer: 'park-calumet', opacity:0}
             ]
         },
         
@@ -207,9 +205,8 @@ var config = {
             //image: 'https://reliablerascal.github.io/bike-far-southeast/images/calumet-park-beach.jpg',
             description: 'Closing the gap to lakefront access remains a complex long-term vision. But the park district\'s <a href="https://www.chicagoparkdistrict.com/parks-facilities/park-no-566-usx" target="_blank">acquisition of U.S. Steel\'s South Works facility</a> establishes the land right-of-way to eventually connect Calumet Park to Steelworker\'s Park, Park 566, Rainbow Beach Park, and the city\'s entire lakefront trail via its current southern end at South Shore Park.',
             location: {
-                center: [-87.52929693758914,
-                    41.714936581261895],
-                zoom: 14,
+                center: [-87.54742, 41.74416],
+                zoom: 12.27,
                 pitch: 0.00,
                 bearing: 0.00
             },
@@ -217,14 +214,10 @@ var config = {
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [ 
-                {layer: 'calumet-beach', opacity:1},
-                {layer: 'bike-path-dot', opacity:1},
-                {layer: 'mapbox-satellite', opacity:0},
-                {layer: 'park-calumet', opacity:0.5}                 
+                {layer: 'park-calumet', opacity:0.5},
+                {layer: 'parks-all-se', opacity:0.5}                 
             ],
             onChapterExit: [
-                {layer: 'calumet-beach', opacity:0},
-                {layer: 'park-calumet', opacity:0}
             ]
         },
 
@@ -249,8 +242,8 @@ var config = {
             callback: '',
             onChapterEnter: [ 
                 {layer: '100th-viaduct', opacity:1},
-                {layer: 'bike-path-dot', opacity:1},
-                {layer: 'mapbox-satellite', opacity:0} 
+                {layer: 'park-calumet', opacity:0.5},
+                {layer: 'parks-all-se', opacity:0}
             ],
             onChapterExit: [
                 {layer: '100th-viaduct', opacity:0}
@@ -265,12 +258,11 @@ var config = {
             id: 'burnham-greenway-north',
             alignment: 'left',
             hidden: false,
-            image: 'https://reliablerascal.github.io/bike-far-southeast/images/100th-viaduct.png',
-            description: 'The <a href="https://www.traillink.com/trail/burnham-greenway/" target="_blank">Burnham Greenway</a>, the city\'s most effective means of bike access from the south, ends at this viaduct. Following part of a former railroad corridor to Lansing Illinois, the greenway connects Calumet Park to Wolf Lake State Recreation Area- a <a href="https://dnr.illinois.gov/parks/park.williamwpowers.html" target="_blank">popular fishing destination</a> straddling the state border in the Hegewisch neighborhood.',
+            //image: 'https://reliablerascal.github.io/bike-far-southeast/images/100th-viaduct.png',
+            description: 'The <a href="https://www.traillink.com/trail/burnham-greenway/" target="_blank">Burnham Greenway</a>, the city\'s most effective means of bike access from the south, ends at this viaduct. Following part of a former railroad corridor to Lansing Illinois, the greenway connects Calumet Park to Wolf Lake (a.k.a. William W. Powers) State Recreation Area- a <a href="https://dnr.illinois.gov/parks/park.williamwpowers.html" target="_blank">popular fishing destination</a> straddling the state border in the Hegewisch neighborhood.',
             location: {
-                center: [-87.53510682861177,
-                    41.71358357592675],
-                zoom: 14,
+                center: [-87.52950, 41.69066],
+                zoom: 12,
                 pitch: 0.00,
                 bearing: 0.00
             },
@@ -278,12 +270,11 @@ var config = {
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [ 
-                {layer: '100th-viaduct', opacity:1},
-                {layer: 'bike-path-dot', opacity:1},
-                {layer: 'mapbox-satellite', opacity:0} 
+                {layer: 'burnham-gw-north', opacity:1},
+                {layer: 'park-calumet', opacity:0.5},
+                {layer: 'park-wolf-lake', opacity:0.5} 
             ],
             onChapterExit: [
-                {layer: '100th-viaduct', opacity:0}
             ]
         },
 
@@ -296,9 +287,8 @@ var config = {
             image: 'https://reliablerascal.github.io/bike-far-southeast/images/wolf-lake-turn.jpg',
             description: 'But the Greenway, eventually intended to extend 11 miles to State Street in Burnham, Illinois, has a 2.5 mile gap, forcing bikers to share the narrow Wolf Lake Boulevard with automobile traffic alongside Wolf Lake and to the south. The Burnham Plan Centennial and the nonprofit organization Openlands considered closing this gap to be the most productive project in <a href="https://burnhamplan100.lib.uchicago.edu/events/id/424/" target="_blank">bringing together the region\'s unconnected green infrastructure</a>.',
             location: {
-                center: [-87.53510682861177,
-                    41.71358357592675],
-                zoom: 14,
+                center: [-87.53670, 41.66096],
+                zoom: 11.37,
                 pitch: 0.00,
                 bearing: 0.00
             },
@@ -306,12 +296,11 @@ var config = {
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [ 
-                {layer: '100th-viaduct', opacity:1},
-                {layer: 'bike-path-dot', opacity:1},
-                {layer: 'mapbox-satellite', opacity:0} 
+                {layer: 'burnham-gw-north', opacity:1},
+                {layer: 'burnham-gw-south', opacity:1},
+                {layer: 'burnham-gw-gap', opacity:1} 
             ],
             onChapterExit: [
-                {layer: '100th-viaduct', opacity:0}
             ]
         },
 
@@ -325,9 +314,8 @@ var config = {
             caption: 'Rendering of proposed bridge over train tracks along Brainard. View southeast along Brainard. Image: <a href="https://burnham-il.gov/burnhamconnector-2/" target="_blank">Village of Burnham</a>',
             description: 'In addition to land acquisition, the most significant barrier to bridging Burnham Greenway\'s gap is literally a <a href="https://activetrans.org/blog/enhancing-lake-calumet-area-connections" target="_blank">bridge over train tracks at Burnham and Brainard</a>- a project complicated by ongoing negotiations with railroad companies.',
             location: {
-                center: [-87.53510682861177,
-                    41.71358357592675],
-                zoom: 14,
+                center: [-87.53928, 41.64339],
+                zoom: 12.89,
                 pitch: 0.00,
                 bearing: 0.00
             },
@@ -335,12 +323,13 @@ var config = {
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [ 
-                {layer: '100th-viaduct', opacity:1},
-                {layer: 'bike-path-dot', opacity:1},
-                {layer: 'mapbox-satellite', opacity:0} 
+                {layer: 'bike-lanes', opacity:0},
+                {layer: 'burnham-gw-north', opacity:1},
+                {layer: 'burnham-gw-south', opacity:1},
+                {layer: 'burnham-gw-gap', opacity:1},
+                {layer: 'park-hegewisch', opacity:0} 
             ],
             onChapterExit: [
-                {layer: '100th-viaduct', opacity:0}
             ]
         },     
 
@@ -352,12 +341,11 @@ var config = {
             id: 'bridge-to-hegewisch',
             alignment: 'left',
             hidden: false,
-            image: 'https://reliablerascal.github.io/bike-far-southeast/images/100th-viaduct.png',
+            image: './images/hegewisch-marsh-bridge.jpg',
             description: 'Closing the Burnham Greenway gap would also help connect bikers to the recently completed bridge across Torrence leading to Hegewisch Marsh Park, or Little Marsh.',
             location: {
-                center: [-87.53510682861177,
-                    41.71358357592675],
-                zoom: 14,
+                center: [-87.55758, 41.65839],
+                zoom: 12.89,
                 pitch: 0.00,
                 bearing: 0.00
             },
@@ -365,12 +353,13 @@ var config = {
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [ 
-                {layer: '100th-viaduct', opacity:1},
-                {layer: 'bike-path-dot', opacity:1},
-                {layer: 'mapbox-satellite', opacity:0} 
+                {layer: 'bike-lanes', opacity:1},
+                {layer: 'burnham-gw-north', opacity:1},
+                {layer: 'burnham-gw-south', opacity:1},
+                {layer: 'burnham-gw-gap', opacity:1},
+                {layer: 'park-hegewisch', opacity:0.5} 
             ],
             onChapterExit: [
-                {layer: '100th-viaduct', opacity:0}
             ]
         },
 
@@ -387,7 +376,7 @@ var config = {
             //and the The Oxford English dictionary defines a fort as a person or thing not susceptible to outside influence or disturbance.',
             location: {
                 center: [-87.56236604152772, 41.6556252316896],
-                zoom: 12.75,
+                zoom: 15,
                 pitch: 0.00,
                 bearing: 0.00
             },
@@ -396,12 +385,12 @@ var config = {
             callback: '',
             onChapterEnter: [
                 {layer: 'bike-lanes', opacity:0},
-                {layer: 'bike-path-dot', opacity:0},
-                {layer: 'mapbox-satellite', opacity:0},
+                {layer: 'burnham-gw-north', opacity:0},
+                {layer: 'burnham-gw-south', opacity:0},
+                {layer: 'burnham-gw-gap', opacity:0},
                 {layer: 'park-hegewisch', opacity:0.5}
             ],
             onChapterExit: [
-                {layer: 'park-hegewisch', opacity:0}
             ]
         },
 
@@ -429,15 +418,10 @@ var config = {
     callback: '',
     onChapterEnter: [ 
         {layer: 'bike-lanes', opacity:1},
-        {layer: 'bike-path-dot', opacity:1},
-        {layer: 'mapbox-satellite', opacity:0},
         {layer: 'park-calumet', opacity:0.5},
         {layer: 'park-hegewisch', opacity:0.5} 
     ],
     onChapterExit: [
-        {layer: 'bike-lanes', opacity:0},
-        {layer: 'park-calumet', opacity:0},
-        {layer: 'park-hegewisch', opacity:0}
     ]
 },
 
@@ -461,12 +445,9 @@ var config = {
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [ 
-                {layer: '100th-viaduct', opacity:1},
-                {layer: 'bike-path-dot', opacity:1},
-                {layer: 'mapbox-satellite', opacity:0} 
+                {layer: '100th-viaduct', opacity:1} 
             ],
             onChapterExit: [
-                {layer: '100th-viaduct', opacity:0}
             ]
         },
 
@@ -475,7 +456,7 @@ var config = {
             id: 'east-side-connectivity',
             alignment: 'left',
             hidden: false,
-            image: 'https://reliablerascal.github.io/bike-far-southeast/images/100th-viaduct.png',
+            //image: 'https://reliablerascal.github.io/bike-far-southeast/images/100th-viaduct.png',
             description: 'For her, 130th is out of the question due to a lack of sidewalks and bike infrastructure west of the Calumet river. That leaves 103rd as the next potential east-west crossing. “103rd freaks me out and that’s the only way I can go east/west,” she says.<p>The recently published <a href="https://bigmarsh.org/2023/07/14/east-side-community-connections-plan/" target="_blank">East Side Neighborhood Connectivity Plan</a> classified both 103rd and 130th as LTS4- the highest level of traffic stress categorized by traffic engineers.',
             location: {
                 center: [-87.53510682861177,
@@ -488,12 +469,9 @@ var config = {
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [ 
-                {layer: '100th-viaduct', opacity:1},
-                {layer: 'bike-path-dot', opacity:1},
-                {layer: 'mapbox-satellite', opacity:0} 
+                {layer: '100th-viaduct', opacity:1}
             ],
             onChapterExit: [
-                {layer: '100th-viaduct', opacity:0}
             ]
         },
         
@@ -503,7 +481,7 @@ var config = {
             id: 'cmap',
             alignment: 'left',
             hidden: false,
-            image: 'https://reliablerascal.github.io/bike-far-southeast/images/100th-viaduct.png',
+            //image: 'https://reliablerascal.github.io/bike-far-southeast/images/100th-viaduct.png',
             description: 'But respondents to a recent survey by Chicago Metropolitan Agency for Planning (CMAP) and the Illinois International Port District identified east-west access as the most needed investment for the Lake Calumet industrial site- ranking above access to nature and exercise.',
             location: {
                 center: [-87.53510682861177,
@@ -516,12 +494,9 @@ var config = {
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [ 
-                {layer: '100th-viaduct', opacity:1},
-                {layer: 'bike-path-dot', opacity:1},
-                {layer: 'mapbox-satellite', opacity:0} 
+                {layer: '100th-viaduct', opacity:1}
             ],
             onChapterExit: [
-                {layer: '100th-viaduct', opacity:0}
             ]
         },
 
@@ -549,8 +524,6 @@ var config = {
     callback: '',
     onChapterEnter: [ 
         {layer: 'bike-lanes', opacity:1},
-        {layer: 'bike-path-dot', opacity:1},
-        {layer: 'mapbox-satellite', opacity:0},
         {layer: 'park-calumet', opacity:0.5},
         {layer: 'park-hegewisch', opacity:0.5} 
     ],
@@ -581,8 +554,6 @@ var config = {
     callback: '',
     onChapterEnter: [
         {layer: 'bike-lanes', opacity:0},
-        {layer: 'bike-path-dot', opacity:0},
-        {layer: 'mapbox-satellite', opacity:0},
         {layer: 'park-hegewisch', opacity:0.5}
     ],
     onChapterExit: [
@@ -610,8 +581,6 @@ var config = {
     callback: '',
     onChapterEnter: [
         {layer: 'bike-lanes', opacity:0},
-        {layer: 'bike-path-dot', opacity:0},
-        {layer: 'mapbox-satellite', opacity:0},
         {layer: 'park-hegewisch', opacity:0.5}
     ],
     onChapterExit: [
@@ -639,8 +608,6 @@ var config = {
     callback: '',
     onChapterEnter: [
         {layer: 'bike-lanes', opacity:0},
-        {layer: 'bike-path-dot', opacity:0},
-        {layer: 'mapbox-satellite', opacity:0},
         {layer: 'park-hegewisch', opacity:0.5}
     ],
     onChapterExit: [
@@ -655,7 +622,7 @@ var config = {
     alignment: 'left',
     hidden: false,
     //title: '',
-    image: 'https://reliablerascal.github.io/bike-far-southeast/images/lake_cal_crossing.jpg',
+    image: 'https://reliablerascal.github.io/bike-far-southeast/images/lake_cal_crossing.png',
     caption: 'Rendering of the trail from 111th Street across Lake Calumet to Big Marsh bike park. Image: <a href="https://activetrans.org/lakecalumettrail" target="_blank">Active Transporation Alliance</a>',
     description: 'In 2015, the Active Transportation Alliance highlighted a constellation of biking and walking improvements along streets including 103rd and 130th, as part of its <a href="http://www.activetrans.org/sites/files/BIGMARSH.pdf" target="_blank">Big Marsh Access Action Plan</a> for facilitating access to and across one of the city\'s newest parks. The plan also featured a proposed bridge across Lake Calumet at 111th.',
     location: {
@@ -669,8 +636,6 @@ var config = {
     callback: '',
     onChapterEnter: [
         {layer: 'bike-lanes', opacity:0},
-        {layer: 'bike-path-dot', opacity:0},
-        {layer: 'mapbox-satellite', opacity:0},
         {layer: 'park-hegewisch', opacity:0.5}
     ],
     onChapterExit: [

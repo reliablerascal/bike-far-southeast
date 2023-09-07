@@ -36,5 +36,6 @@ body {
 
   figcaption {
     font-size: 10px; /* for image captions */
+    line-height: 15px;
     color: #F4F7D9;
   }

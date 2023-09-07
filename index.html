@@ -75,7 +75,7 @@
         }
 
         .step div {
-            padding:  25px 50px;
+            padding:  25px 25px;
             line-height: 25px;
             font-size: 13px;
         }
@@ -281,58 +281,24 @@ const markerColor = '#008080';
 
 //'filter': ["==", "PublicationName", "El Especial / El Especialito"],
 map.on("load", function() {
+    //for debugging, list out all layers within my style
+    // var style = map.getStyle();
+    // if (style && style.layers) {
+    //     style.layers.forEach(function(layer) {
+    //         console.log(layer.id); // logging the layer id, you can log other properties if needed
+    //     });
+    // }
+    
     //adding code here via Steph to incorporate my own GeoJSON points layer
-    map.addSource('trailMarkers', {
+    map.addSource('geo-bike-chicago-se', {
          'type': 'geojson',
          'data': 'https://reliablerascal.github.io/bike-far-southeast/data/bike-chicago-southeast.geojson'
      });
      map.addLayer({
-         'id': 'henry-booth',
-         'type': 'circle',
-         'source': 'trailMarkers',
-         'filter': ["==", "name", "henry-booth"],
-         'paint': {
-             'circle-color': markerColor,
-             'circle-stroke-color': '#4d4d4d',
-             'circle-stroke-width': 0.5,
-             'circle-radius': 15,
-             'circle-opacity': 0,
-             'circle-stroke-opacity': 0
-         },
-     });
-     map.addLayer({
-         'id': '130th-baltimore',
-         'type': 'circle',
-         'source': 'trailMarkers',
-         'filter': ["==", "name", "130th-baltimore"],
-         'paint': {
-             'circle-color': markerColor,
-             'circle-stroke-color': '#4d4d4d',
-             'circle-stroke-width': 0.5,
-             'circle-radius': 15,
-             'circle-opacity': 0,
-             'circle-stroke-opacity': 0
-         },
-     });
-     map.addLayer({
          'id': 'wolf-lake',
          'type': 'circle',
-         'source': 'trailMarkers',
+         'source': 'geo-bike-chicago-se',
          'filter': ["==", "name", "wolf-lake"],
-         'paint': {
-             'circle-color': markerColor,
-             'circle-stroke-color': '#4d4d4d',
-             'circle-stroke-width': 0.5,
-             'circle-radius': 15,
-             'circle-opacity': 0,
-             'circle-stroke-opacity': 0
-         },
-     });
-     map.addLayer({
-         'id': '106th-ewing',
-         'type': 'circle',
-         'source': 'trailMarkers',
-         'filter': ["==", "name", "106th-ewing"],
          'paint': {
              'circle-color': markerColor,
              'circle-stroke-color': '#4d4d4d',
@@ -345,7 +311,7 @@ map.on("load", function() {
      map.addLayer({
          'id': '100th-viaduct',
          'type': 'circle',
-         'source': 'trailMarkers',
+         'source': 'geo-bike-chicago-se',
          'filter': ["==", "name", "100th-viaduct"],
          'paint': {
              'circle-color': markerColor,
@@ -359,7 +325,7 @@ map.on("load", function() {
      map.addLayer({
          'id': 'calumet-beach',
          'type': 'circle',
-         'source': 'trailMarkers',
+         'source': 'geo-bike-chicago-se',
          'filter': ["==", "name", "calumet-beach"],
          'paint': {
              'circle-color': markerColor,
@@ -371,7 +337,7 @@ map.on("load", function() {
          },
      });
 
-
+     
     // setup the instance, pass callback functions
     scroller
     .setup({

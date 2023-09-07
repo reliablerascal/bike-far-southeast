@@ -33,3 +33,8 @@ body {
   a:hover {
     text-decoration: underline; /* Add underline on hover */
   }
+
+  figcaption {
+    font-size: 10px; /* for image captions */
+    color: #F4F7D9;
+  }

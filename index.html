@@ -29,7 +29,7 @@
             position: sticky;
             top: 0;
             height:100vh;  
-            width:100vw;
+            width:100%;
         }
         #header h1, #header h2, #header p {
             margin: 0;
@@ -94,36 +94,56 @@
 </head>
 <body>
 
-<!--- hard-coded header-->
-<!--- main and neve div needed to implement hpmoon styles-->
-
-<!---<main id="content" class="neve-main" role="main">--->
-    <!-- <div class="container single-post-container"> -->
-
 <main id="content" class="neve-main" role="main">
 <div id="intro">
-    <h1>DRAFT- Far Southeast Side Bike Access</h1>
-    <h3><em>Chicago's Southeast side possesses a wealth of waterfront and park space, but bikers can't yet safely access it.</em></h3>
-    <p>by Rob Reid<br>
-    5 September 2:07 pm<br>
-    <p><em>See <a href="https://github.com/reliablerascal/bike-far-southeast">GitHub repository</a> for methodology</em>
-    <br>
-<img src="https://reliablerascal.github.io/bike-far-southeast/images/calumet-park-beach-fence-16-9.jpg" style="width: 50%;"></img><!---the image is 2400 wide by 1350 high-->
+<!---add margins to control width--->
+<table width = 100%>
+    <tr><td colspan=3>&nbsp;</td></tr>
+    <td width = 50></td>
+    <td>
+
+    <h1>The Far Southeast Side's Disconnected Network of Public Parks</h1>
+    <h3><em>Chicago's Southeast side possesses a natural wealth of lakefront and wetlands. But bikers can't yet safely access it.</em></h3>
+    <p>by <a href="https://reliablerascal.github.io" target="_blank">Rob Reid</a><br><br>
+    <em>6 September 2023</em><br>
+    <p><em>See <a href="https://github.com/reliablerascal/bike-far-southeast">GitHub repository</a> for methodology.</em>
+    <br><br>
+<img src="https://reliablerascal.github.io/bike-far-southeast/images/calumet-park-beach-fence-16-9.jpg" style="width: 100%;"></img><!---the image is 2400 wide by 1350 high-->
+
+<div style="max-width: 800px; margin:0 auto; text-align: left; line-height: 25px;"> 
+    <p>&nbsp;<p>&nbsp;<p>Countless drivers crisscross the rugged prairie of Chicago's Southeast Side, weaving around decaying steel mills, abandoned grain silos, landfills, and recycling plants. Traversing the Chicago Skyway, the Bishop Ford Freeway, or major thoroughfares like 130th Street and Torrence Avenue, motorists might not notice the lakefront beaches or wetland parks fashioned from former industrial sites reclaimed by the city in recent decades. They also might not notice the small number of people on foot and bike trying to find respite in these natural settings.<p>&nbsp;<p>&nbsp;
 </div>
 
+    </td><td width = 50></td></tr></table>
+</div>
+
+<!----------------------->
+<!---    THE STORY     -->
+<!----------------------->
 <div id="map"></div>
 <div id="story"></div><!-- this is the narrative corresponding to the map, as coded in config.js chapters--->
 <!-- this adds text at the bottom, which can be seen as long as you can scroll out of the map--->
 </main>
 
 <footer>
-<div id="outro">
-    <p>Methodology and data: see <a href="https://github.com/reliablerascal/bike-far-southeast">GitHub repository</a><br> Created using <a href="https://github.com/mapbox/storytelling" target="_blank">Mapbox Storytelling</a> template.
+    <div id="outro">
+        <table width = 100%>
+            <tr><td colspan=3>&nbsp;</td></tr>
+            <td width = 50></td>
+            <td>
+                <div style="max-width: 800px; margin:0 auto; text-align: left; line-height: 25px;"> 
+                <p>Building on this and other plans, Friends of Big Marsh published the <a href="https://bigmarsh.org/2023/07/14/east-side-community-connections-plan/" target="_blank">East Side Neighborhood Connectivity Plan</a>, which delves into a concrete feasibility plan and provides specific recommendations for how to make that work. As <a href="https://chi.streetsblog.org/2023/07/14/new-east-side-connectivity-plan-would-upgrade-condition-for-biking-to-big-marsh" target="_blank">Streetsblog noted in July</a>, that plan is a key step in building political will necessary to secure funding for bike and pedestrian transit improvements.
+
+<p>While funding requirements are significant, improved access in the region would help area residents and visitors tap into an arguably greater wealth: the area’s abundant park space.
+
+        <p>Methodology and data: see <a href="https://github.com/reliablerascal/bike-far-southeast">GitHub repository</a>.<br> Adapted from <a href="https://github.com/mapbox/storytelling" target="_blank">Mapbox Storytelling</a> template.
         <!--- for hp moon style--></p>
+        </div>
+    </td><td width = 50></td></tr></table>
 </div>
 </footer>
 
-<script src="https://reliablerascal.github.io/bike-far-southeast/config.js"></script>
+<script src="config.js"></script>
 <!-- <script src="./config.js"></script> -->
 <script>
 var initLoad = true;
@@ -178,8 +198,10 @@ config.chapters.forEach((record, idx) => {
 //RR attempt to set the container height so I can scroll past it. but the container is really the map div
 //container.style.height = '300px';
 //features.style.position = 'relative';
-container.style.border = '1px solid red';
-features.style.border = '10px solid purple';
+
+//color-code containers for debugging
+// container.style.border = '1px solid red';
+// features.style.border = '10px solid purple';
 
     var chapter = document.createElement('div');
 
@@ -193,6 +215,12 @@ features.style.border = '10px solid purple';
         var image = new Image();
         image.src = record.image;
         chapter.appendChild(image);
+    }
+
+    if (record.caption) {
+        var capt = document.createElement('figcaption');
+        capt.innerHTML = record.caption;
+        chapter.appendChild(capt);
     }
 
     if (record.description) {
@@ -256,7 +284,7 @@ map.on("load", function() {
     //adding code here via Steph to incorporate my own GeoJSON points layer
     map.addSource('trailMarkers', {
          'type': 'geojson',
-         'data': 'https://reliablerascal.github.io/bike-far-southeast/data/bike-wolf-lake-points.geojson'
+         'data': 'https://reliablerascal.github.io/bike-far-southeast/data/bike-chicago-southeast.geojson'
      });
      map.addLayer({
          'id': 'henry-booth',
@@ -408,6 +436,8 @@ map.on("load", function() {
 window.addEventListener('resize', scroller.resize);
 
 </script>
+
+
 </body>
 <!---</main>--->
 <!---close out hp moon style-->

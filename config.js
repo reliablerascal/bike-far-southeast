@@ -166,7 +166,8 @@ var config = {
                 {layer: 'park-calumet', opacity:0.5},
                 {layer: 'park-hegewisch', opacity:0},
                 {layer: 'park-wolf-lake', opacity:0},
-                {layer: 'park-eggers-grove', opacity:0}                 
+                {layer: 'park-eggers-grove', opacity:0},
+                {layer: 'path-lakeshore', opacity:0}                  
             ],
             onChapterExit: [
             ]
@@ -191,7 +192,8 @@ var config = {
             callback: '',
             onChapterEnter: [ 
                 {layer: 'park-calumet', opacity:0.5},
-                {layer: 'parks-all-se', opacity:0}                 
+                {layer: 'parks-all-se', opacity:0},
+                {layer: 'path-lakeshore', opacity:1}                 
             ],
             onChapterExit: [
             ]
@@ -215,7 +217,8 @@ var config = {
             callback: '',
             onChapterEnter: [ 
                 {layer: 'park-calumet', opacity:0.5},
-                {layer: 'parks-all-se', opacity:0.5}                 
+                {layer: 'parks-all-se', opacity:0.5},
+                {layer: 'path-lakeshore', opacity:1}                 
             ],
             onChapterExit: [
             ]
@@ -241,12 +244,14 @@ var config = {
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [ 
-                {layer: '100th-viaduct', opacity:1},
+                {layer: 'point-100th-viaduct', opacity:1},
                 {layer: 'park-calumet', opacity:0.5},
-                {layer: 'parks-all-se', opacity:0}
+                {layer: 'parks-all-se', opacity:0},
+                {layer: 'park-wolf-lake', opacity:0},
+                {layer: 'path-lakeshore', opacity:0}    
             ],
             onChapterExit: [
-                {layer: '100th-viaduct', opacity:0}
+                {layer: 'point-100th-viaduct', opacity:0}
             ]
         },
 
@@ -258,7 +263,7 @@ var config = {
             id: 'burnham-greenway-north',
             alignment: 'left',
             hidden: false,
-            //image: 'https://reliablerascal.github.io/bike-far-southeast/images/100th-viaduct.png',
+            //image: 'https://reliablerascal.github.io/bike-far-southeast/images/point-100th-viaduct.png',
             description: 'The <a href="https://www.traillink.com/trail/burnham-greenway/" target="_blank">Burnham Greenway</a>, the city\'s most effective means of bike access from the south, ends at this viaduct. Following part of a former railroad corridor to Lansing Illinois, the greenway connects Calumet Park to Wolf Lake (a.k.a. William W. Powers) State Recreation Area- a <a href="https://dnr.illinois.gov/parks/park.williamwpowers.html" target="_blank">popular fishing destination</a> straddling the state border in the Hegewisch neighborhood.',
             location: {
                 center: [-87.52950, 41.69066],
@@ -272,7 +277,7 @@ var config = {
             onChapterEnter: [ 
                 {layer: 'burnham-gw-north', opacity:1},
                 {layer: 'park-calumet', opacity:0.5},
-                {layer: 'park-wolf-lake', opacity:0.5} 
+                {layer: 'park-wolf-lake', opacity:0.3} 
             ],
             onChapterExit: [
             ]
@@ -327,7 +332,8 @@ var config = {
                 {layer: 'burnham-gw-north', opacity:1},
                 {layer: 'burnham-gw-south', opacity:1},
                 {layer: 'burnham-gw-gap', opacity:1},
-                {layer: 'park-hegewisch', opacity:0} 
+                {layer: 'park-hegewisch', opacity:0},
+                {layer: 'point-bridge-burnham-brainard', opacity: 1} 
             ],
             onChapterExit: [
             ]
@@ -357,7 +363,8 @@ var config = {
                 {layer: 'burnham-gw-north', opacity:1},
                 {layer: 'burnham-gw-south', opacity:1},
                 {layer: 'burnham-gw-gap', opacity:1},
-                {layer: 'park-hegewisch', opacity:0.5} 
+                {layer: 'park-hegewisch', opacity:0.5},
+                {layer: 'point-bridge-burnham-brainard', opacity: 0}
             ],
             onChapterExit: [
             ]
@@ -388,7 +395,8 @@ var config = {
                 {layer: 'burnham-gw-north', opacity:0},
                 {layer: 'burnham-gw-south', opacity:0},
                 {layer: 'burnham-gw-gap', opacity:0},
-                {layer: 'park-hegewisch', opacity:0.5}
+                {layer: 'park-hegewisch', opacity:0.5},
+                {layer: 'point-bridge-burnham-brainard', opacity: 0}
             ],
             onChapterExit: [
             ]
@@ -407,8 +415,7 @@ var config = {
     //image: './images/henry-booth-house.png',
     // description: 'As noted in the Hegewisch plan, the area\'s parks remain underutilized in part because of this limited bike and pedestrian access. As restoration of the area\'s parks is a work in progress, so too are interdependent efforts to improve transit connecting local residents to the parks.',
     location: {
-        center: [-87.55685590723697,
-            41.659210130018266],
+        center: [-87.55607, 41.68376],
         zoom: 12,
         pitch: 0.00,
         bearing: 0.00
@@ -418,8 +425,10 @@ var config = {
     callback: '',
     onChapterEnter: [ 
         {layer: 'bike-lanes', opacity:1},
-        {layer: 'park-calumet', opacity:0.5},
-        {layer: 'park-hegewisch', opacity:0.5} 
+        {layer: 'burnham-gw-north', opacity:1},
+        {layer: 'burnham-gw-south', opacity:1},
+        {layer: 'park-calumet', opacity:0},
+        {layer: 'park-hegewisch', opacity:0} 
     ],
     onChapterExit: [
     ]
@@ -435,17 +444,16 @@ var config = {
             caption: 'Jane Healey at Lake Calumet Bike Network Study Tour, August 19. Photo: Rob Reid',
             description: 'Aside from gaps in the lakefront trail and the Burnham Greenway, east to west transit is even more problematic for bikers. Bike commuters such as Jane Healey, a bike advocate who commutes from her home in Blue Island to St. Francis de Sales High School, confront this challenge regularly.<p>“People want to go out into nature, take their strollers or bring their grandpa out. And it\'s hard,” she says, noting that she\'s been hit by cars twice and incurred over $100,000 in related medical bills for surgery.',
             location: {
-                center: [-87.53510682861177,
-                    41.71358357592675],
-                zoom: 14,
+                center: [-87.55607, 41.68376],
+                zoom: 12,
                 pitch: 0.00,
                 bearing: 0.00
             },
             mapAnimation: 'flyTo',
             rotateAnimation: false,
             callback: '',
-            onChapterEnter: [ 
-                {layer: '100th-viaduct', opacity:1} 
+            onChapterEnter: [
+                {layer: 'raster-traffic-stress', opacity: 0}  
             ],
             onChapterExit: [
             ]
@@ -456,49 +464,26 @@ var config = {
             id: 'east-side-connectivity',
             alignment: 'left',
             hidden: false,
-            //image: 'https://reliablerascal.github.io/bike-far-southeast/images/100th-viaduct.png',
-            description: 'For her, 130th is out of the question due to a lack of sidewalks and bike infrastructure west of the Calumet river. That leaves 103rd as the next potential east-west crossing. “103rd freaks me out and that’s the only way I can go east/west,” she says.<p>The recently published <a href="https://bigmarsh.org/2023/07/14/east-side-community-connections-plan/" target="_blank">East Side Neighborhood Connectivity Plan</a> classified both 103rd and 130th as LTS4- the highest level of traffic stress categorized by traffic engineers.',
+            //image: 'https://reliablerascal.github.io/bike-far-southeast/images/point-100th-viaduct.png',
+            description: 'For her, 130th is out of the question due to a lack of sidewalks and bike infrastructure west of the Calumet river. That leaves 103rd as the next potential east-west crossing. “103rd freaks me out and that’s the only way I can go east/west,” she says.<p>The recently published <a href="https://bigmarsh.org/2023/07/14/east-side-community-connections-plan/" target="_blank">East Side Neighborhood Connectivity Plan</a> classified both 103rd and 130th as LTS4- the highest level of traffic stress categorized by traffic engineers.<p>Respondents to a recent survey by Chicago Metropolitan Agency for Planning (CMAP) and the Illinois International Port District identified east-west access as the most needed investment for the Lake Calumet industrial site- ranking above access to nature and exercise.',
             location: {
-                center: [-87.53510682861177,
-                    41.71358357592675],
-                zoom: 14,
+                center: [-87.55607, 41.68376],
+                zoom: 12,
                 pitch: 0.00,
                 bearing: 0.00
             },
             mapAnimation: 'flyTo',
             rotateAnimation: false,
             callback: '',
-            onChapterEnter: [ 
-                {layer: '100th-viaduct', opacity:1}
+            onChapterEnter: [
+                {layer: 'raster-traffic-stress', opacity: 1} 
             ],
             onChapterExit: [
+                {layer: 'raster-traffic-stress', opacity: 0}
             ]
         },
         
-        
-
-        {
-            id: 'cmap',
-            alignment: 'left',
-            hidden: false,
-            //image: 'https://reliablerascal.github.io/bike-far-southeast/images/100th-viaduct.png',
-            description: 'But respondents to a recent survey by Chicago Metropolitan Agency for Planning (CMAP) and the Illinois International Port District identified east-west access as the most needed investment for the Lake Calumet industrial site- ranking above access to nature and exercise.',
-            location: {
-                center: [-87.53510682861177,
-                    41.71358357592675],
-                zoom: 14,
-                pitch: 0.00,
-                bearing: 0.00
-            },
-            mapAnimation: 'flyTo',
-            rotateAnimation: false,
-            callback: '',
-            onChapterEnter: [ 
-                {layer: '100th-viaduct', opacity:1}
-            ],
-            onChapterExit: [
-            ]
-        },
+    
 
 ///////////////////////////////////////////////
 //                                           //
@@ -513,24 +498,18 @@ var config = {
     //image: './images/henry-booth-house.png',
     // description: 'As noted in the Hegewisch plan, the area\'s parks remain underutilized in part because of this limited bike and pedestrian access. As restoration of the area\'s parks is a work in progress, so too are interdependent efforts to improve transit connecting local residents to the parks.',
     location: {
-        center: [-87.55685590723697,
-            41.659210130018266],
-        zoom: 12,
-        pitch: 0.00,
-        bearing: 0.00
+        center: [-87.55607, 41.68376],
+                zoom: 11.69,
+                pitch: 0.00,
+                bearing: 0.00
     },
     mapAnimation: 'flyTo',
     rotateAnimation: false,
     callback: '',
-    onChapterEnter: [ 
-        {layer: 'bike-lanes', opacity:1},
-        {layer: 'park-calumet', opacity:0.5},
-        {layer: 'park-hegewisch', opacity:0.5} 
+    onChapterEnter: [
+        {layer: 'raster-traffic-stress', opacity: 0} 
     ],
     onChapterExit: [
-        {layer: 'bike-lanes', opacity:0},
-        {layer: 'park-calumet', opacity:0},
-        {layer: 'park-hegewisch', opacity:0}
     ]
 },
 
@@ -544,20 +523,20 @@ var config = {
     //image: 'https://reliablerascal.github.io/bike-far-southeast/images/hegewisch-marsh-park.jpg',
     description: 'Multiple local stakeholders share overlapping visions of improving transit in the area. In April, Cook County released a <a href="https://www.cookcountyil.gov/bikeplan" target="_blank">Bike Plan</a> envisioning a network of low-stress bike routes reaching within a mile of 96% of Cook County residents. CMAP\'s own <a href="https://www.cmap.illinois.gov/mobility/walking-and-bicycling/greenways-and-trails#Northeastern_Illinois_Regional_Greenways_and_Trails_Plan_2017" target="_blank">long-range walking and biking plan</a> proposed a “network of continuous greenway and trail corridors, linked across jurisdictions, providing scenic beauty, natural habitat, and recreational and transportation opportunities.”',
     location: {
-        center: [-87.56236604152772, 41.6556252316896],
-        zoom: 12.75,
-        pitch: 0.00,
-        bearing: 0.00
+        center: [-87.55607, 41.68376],
+                zoom: 11.69,
+                pitch: 0.00,
+                bearing: 0.00
     },
     mapAnimation: 'flyTo',
     rotateAnimation: false,
     callback: '',
     onChapterEnter: [
-        {layer: 'bike-lanes', opacity:0},
-        {layer: 'park-hegewisch', opacity:0.5}
+        {layer: 'park-calumet', opacity:0},
+        {layer: 'park-hegewisch', opacity:0},
+        {layer: 'path-lcbn-august', opacity: 0}
     ],
     onChapterExit: [
-        {layer: 'park-hegewisch', opacity:0}
     ]
 },
 
@@ -571,20 +550,21 @@ var config = {
     //image: 'https://reliablerascal.github.io/bike-far-southeast/images/hegewisch-marsh-park.jpg',
     description: 'To build awareness of the limitations and potential for biking on the southeast side, Chicago and Cook County departments of transportation coordinated a <a href="https://chi.streetsblog.org/2023/08/23/county-cdot-hosted-bike-ride-to-look-at-the-strengths-and-weaknesses-of-se-side-bike-infrastructure" target="_blank">bike tour through Chicago\'s Southeast side</a> in August, leading from Hegewisch Marsh Park to Calumet Park Beach.',
     location: {
-        center: [-87.56236604152772, 41.6556252316896],
-        zoom: 12.75,
-        pitch: 0.00,
-        bearing: 0.00
+        center: [-87.54488, 41.68837],
+zoom: 11.91,
+pitch: 0.00,
+bearing: 0.00
     },
     mapAnimation: 'flyTo',
     rotateAnimation: false,
     callback: '',
     onChapterEnter: [
-        {layer: 'bike-lanes', opacity:0},
-        {layer: 'park-hegewisch', opacity:0.5}
+        {layer: 'park-calumet', opacity:0.5},
+        {layer: 'park-hegewisch', opacity:0.5},
+        {layer: 'path-lcbn-august', opacity: 1},
+        {layer: 'path-lcbn-september', opacity: 0}
     ],
     onChapterExit: [
-        {layer: 'park-hegewisch', opacity:0}
     ]
 },
 
@@ -598,27 +578,29 @@ var config = {
     //image: 'https://reliablerascal.github.io/bike-far-southeast/images/hegewisch-marsh-park.jpg',
     description: 'As part of the <a href="https://storymaps.arcgis.com/stories/56fd791cb1fa4cf69cd67411c345442a" target="_blank">Lake Calumet Bike Network study</a>, a second tour planned for <a href="https://storymaps.arcgis.com/stories/56fd791cb1fa4cf69cd67411c345442a#ref-n-u5t7bg" target="_blank">September 23</a> aims to highlight transit challenges in the nearby Roseland neighborhood.',
     location: {
-        center: [-87.56236604152772, 41.6556252316896],
-        zoom: 12.75,
-        pitch: 0.00,
-        bearing: 0.00
+        center: [-87.61208, 41.70337],
+zoom: 12.76,
+pitch: 0.00,
+bearing: 0.00
     },
     mapAnimation: 'flyTo',
     rotateAnimation: false,
     callback: '',
     onChapterEnter: [
-        {layer: 'bike-lanes', opacity:0},
-        {layer: 'park-hegewisch', opacity:0.5}
+        {layer: 'park-calumet', opacity:0},
+        {layer: 'park-hegewisch', opacity:0},
+        {layer: 'path-lcbn-august', opacity: 0},
+        {layer: 'path-lcbn-september', opacity: 1},
+        {layer: 'raster-111th-bridge', opacity: 0}
     ],
     onChapterExit: [
-        {layer: 'park-hegewisch', opacity:0}
     ]
 },
 
 
 
 {
-    id: 'big-marsh-access-action-plan',
+    id: '111th-bridge',
     alignment: 'left',
     hidden: false,
     //title: '',
@@ -626,20 +608,20 @@ var config = {
     caption: 'Rendering of the trail from 111th Street across Lake Calumet to Big Marsh bike park. Image: <a href="https://activetrans.org/lakecalumettrail" target="_blank">Active Transporation Alliance</a>',
     description: 'In 2015, the Active Transportation Alliance highlighted a constellation of biking and walking improvements along streets including 103rd and 130th, as part of its <a href="http://www.activetrans.org/sites/files/BIGMARSH.pdf" target="_blank">Big Marsh Access Action Plan</a> for facilitating access to and across one of the city\'s newest parks. The plan also featured a proposed bridge across Lake Calumet at 111th.',
     location: {
-        center: [-87.56236604152772, 41.6556252316896],
-        zoom: 12.75,
-        pitch: 0.00,
-        bearing: 0.00
+        center: [-87.58583, 41.68731],
+zoom: 13.64,
+pitch: 0.00,
+bearing: 0.00
     },
     mapAnimation: 'flyTo',
     rotateAnimation: false,
     callback: '',
     onChapterEnter: [
-        {layer: 'bike-lanes', opacity:0},
-        {layer: 'park-hegewisch', opacity:0.5}
+        {layer: 'path-lcbn-september', opacity: 0},
+        {layer: 'park-hegewisch', opacity:0},
+        {layer: 'raster-111th-bridge', opacity: 1}
     ],
     onChapterExit: [
-        {layer: 'park-hegewisch', opacity:0}
     ]
 }
 

@@ -119,7 +119,7 @@
     <h1>The Far Southeast Side's Disconnected Network of Public Parks</h1>
     <h3><em>Chicago's Southeast side possesses a natural wealth of lakefront and wetlands. But bikers can't yet safely access it.</em></h3>
     <p>by <a href="https://reliablerascal.github.io" target="_blank">Rob Reid</a><br><br>
-    <em>7 September 2023</em><br>
+    <em>8 September 2023</em><br>
     <!---<p><em>See <a href="https://github.com/reliablerascal/bike-far-southeast">GitHub repository</a> for methodology.</em>--->
     <br><br>
 <img src="https://reliablerascal.github.io/bike-far-southeast/images/calumet-park-beach-fence-16-9.jpg" style="width: 100%;"></img>
@@ -365,6 +365,7 @@ map.on("load", function() {
         },
      });
 
+//add map- lakeshore trail
      map.addSource('path-lakeshore-trail', {
          'type': 'geojson',
          'data': 'data/lakeshore-trail.geojson'
@@ -382,25 +383,42 @@ map.on("load", function() {
         },
      });
 
+//add map- Iroquois Landing
+     map.addSource('iroquois-landing', {
+         'type': 'geojson',
+         'data': 'data/iroquois-landing.geojson'
+     });
+     map.addLayer({
+         'id': 'park-iroquois-landing',
+         'type': 'fill',
+         'source': 'iroquois-landing',
+         'filter': ["==", "name", "iroquois-landing"],
+         'paint': {
+            'fill-color': '#739041',
+            'fill-opacity': 0
+        },
+     });
+
      //debug: check whether my points are found and loaded
-//      if (map.isSourceLoaded('geo-bike-chicago-se')) {
+     //sub in the SOURCE name in all areas, the feature name ONLY in the features.length section
+//      if (map.isSourceLoaded('iroquois-landing')) {
 //         checkSourceFeatures();
 //     } else {
 //         map.on('sourcedata', function(event) {
-//             if (event.sourceId === 'geo-bike-chicago-se' && map.isSourceLoaded('geo-bike-chicago-se')) {
+//             if (event.sourceId === 'iroquois-landing' && map.isSourceLoaded('iroquois-landing')) {
 //                 checkSourceFeatures();
 //             }
 //         });
 //     };
 //     function checkSourceFeatures() {
-//     const features = map.querySourceFeatures('geo-bike-chicago-se', {
-//         filter: ["==", "name", "path-lcbn-august"]
+//     const features = map.querySourceFeatures('iroquois-landing', {
+//         filter: ["==", "name", "park-iroquois-landing"]
 //     });
 
 //     if (features.length > 0) {
-//         console.log("Found the path 'path-lcbn-august' in the source!");
+//         console.log("Found the path 'park-iroquois-landing' in the source!");
 //     } else {
-//         console.log("No path found with the name 'path-lcbn-august'.");
+//         console.log("No path found with the name 'park-iroquois-landing'.");
 //     }
 // };
 

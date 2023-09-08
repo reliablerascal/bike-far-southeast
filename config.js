@@ -192,6 +192,7 @@ var config = {
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [ 
+                {layer: 'park-iroquois-landing', opacity:0},
                 {layer: 'park-calumet', opacity:0.5},
                 {layer: 'parks-all-se', opacity:0},
                 {layer: 'path-lakeshore', opacity:1}                 
@@ -206,7 +207,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             //image: 'https://reliablerascal.github.io/bike-far-southeast/images/calumet-park-beach.jpg',
-            description: 'Closing the gap to lakefront access remains a complex long-term vision. But the park district\'s <a href="https://www.chicagoparkdistrict.com/parks-facilities/park-no-566-usx" target="_blank">acquisition of U.S. Steel\'s South Works facility</a> establishes the land right-of-way to eventually connect Calumet Park to Steelworker\'s Park, Park 566, Rainbow Beach Park, and the city\'s entire lakefront trail via its current southern end at South Shore Park.',
+            description: 'Closing the gap to lakefront access remains a complex long-term vision. But the park district\'s <a href="https://www.chicagoparkdistrict.com/parks-facilities/park-no-566-usx" target="_blank">acquisition of U.S. Steel\'s South Works facility</a> (a.k.a. Park 566) establishes the land right-of-way to eventually connect Calumet Park to Iroquois Landing, Steelworker\'s Park, Rainbow Beach Park, and the city\'s entire lakefront trail via its current southern end at South Shore Park.',
             location: {
                 center: [-87.54742, 41.74416],
                 zoom: 12.27,
@@ -218,6 +219,7 @@ var config = {
             callback: '',
             onChapterEnter: [ 
                 {layer: 'park-calumet', opacity:0.5},
+                {layer: 'park-iroquois-landing', opacity:0.5},
                 {layer: 'parks-all-se', opacity:0.5},
                 {layer: 'path-lakeshore', opacity:1}                 
             ],
@@ -245,6 +247,7 @@ var config = {
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [ 
+                {layer: 'park-iroquois-landing', opacity:0},
                 {layer: 'point-100th-viaduct', opacity:1},
                 {layer: 'park-calumet', opacity:0.5},
                 {layer: 'parks-all-se', opacity:0},
@@ -304,7 +307,8 @@ var config = {
             onChapterEnter: [ 
                 {layer: 'burnham-gw-north', opacity:1},
                 {layer: 'burnham-gw-south', opacity:1},
-                {layer: 'burnham-gw-gap', opacity:1} 
+                {layer: 'burnham-gw-gap', opacity:1},
+                {layer: 'point-bridge-burnham-brainard', opacity: 0}
             ],
             onChapterExit: [
             ]
@@ -380,7 +384,7 @@ var config = {
             //title: '',
             image: 'https://reliablerascal.github.io/bike-far-southeast/images/hegewisch-marsh-zoline.jpg',
             caption: 'Hegewisch Marsh Park (a.k.a. "Little Marsh"). Photo: Jeff Zoline',
-            description: 'The recent recipient of a <a href="https://news.wttw.com/2022/12/09/feds-pour-big-money-coastal-restoration-projects-and-chicago-s-hegewisch-marsh-comes-out" target="_blank">$500,000 grant from the National Coastal Resilience Fund</a>, the 129-acre park provides a home to <a href="https://southsideweekly.com/best-natural-oasis-hegewisch-marsh/" target="_blank">cottonwoods and cottontails</a> amidst marsh, wetland, and meadows on the site of former steel mills. As the <a href="https://engage.cmap.illinois.gov/hegewisch-neighborhood-plan" target="_blank">Hegewisch Neighborhood Plan</a> notes, i\'s an "underutilized" resource, in part because it\'s hard to get there, at the intersection of heavily trafficked 130th and Torrence.',
+            description: 'The recent recipient of a <a href="https://news.wttw.com/2022/12/09/feds-pour-big-money-coastal-restoration-projects-and-chicago-s-hegewisch-marsh-comes-out" target="_blank">$500,000 grant from the National Coastal Resilience Fund</a>, the 129-acre park provides a home to <a href="https://southsideweekly.com/best-natural-oasis-hegewisch-marsh/" target="_blank">cottonwoods and cottontails</a> amidst marsh, wetland, and meadows on the site of former steel mills. As the <a href="https://engage.cmap.illinois.gov/hegewisch-neighborhood-plan" target="_blank">Hegewisch Neighborhood Plan</a> notes, it\'s an "underutilized" resource, in part because it\'s hard to get there, at the intersection of heavily trafficked 130th and Torrence.',
             //and the The Oxford English dictionary defines a fort as a person or thing not susceptible to outside influence or disturbance.',
             location: {
                 center: [-87.56236604152772, 41.6556252316896],
@@ -535,7 +539,10 @@ var config = {
     onChapterEnter: [
         {layer: 'park-calumet', opacity:0},
         {layer: 'park-hegewisch', opacity:0},
-        {layer: 'path-lcbn-august', opacity: 0}
+        {layer: 'path-lcbn-august', opacity: 0},
+        {layer: 'bike-lanes', opacity:1},
+        {layer: 'burnham-gw-north', opacity:1},
+        {layer: 'burnham-gw-south', opacity:1}
     ],
     onChapterExit: [
     ]
@@ -563,7 +570,10 @@ bearing: 0.00
         {layer: 'park-calumet', opacity:0.5},
         {layer: 'park-hegewisch', opacity:0.5},
         {layer: 'path-lcbn-august', opacity: 1},
-        {layer: 'path-lcbn-september', opacity: 0}
+        {layer: 'path-lcbn-september', opacity: 0},
+        {layer: 'bike-lanes', opacity:0.3},
+        {layer: 'burnham-gw-north', opacity:0.3},
+        {layer: 'burnham-gw-south', opacity:0.3}
     ],
     onChapterExit: [
     ]
@@ -592,7 +602,10 @@ bearing: 0.00
         {layer: 'park-hegewisch', opacity:0},
         {layer: 'path-lcbn-august', opacity: 0},
         {layer: 'path-lcbn-september', opacity: 1},
-        {layer: 'raster-111th-bridge', opacity: 0}
+        {layer: 'raster-111th-bridge', opacity: 0},
+        {layer: 'bike-lanes', opacity:1},
+        {layer: 'burnham-gw-north', opacity:1},
+        {layer: 'burnham-gw-south', opacity:1}
     ],
     onChapterExit: [
     ]

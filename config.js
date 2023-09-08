@@ -5,9 +5,9 @@ var config = {
     style: 'mapbox://styles/robcat26/cllfi4uo901m701qleb6n02ik',
     
     //production access token specific to bike southeast project and restricted by URLs:
-    //accessToken: 'pk.eyJ1Ijoicm9iY2F0MjYiLCJhIjoiY2xtMHpwNmtpMGV4ZTNkbTFmazczNXJqNSJ9.l9P-WMfiDKXg4Iv74yVueA',
-    //public access token for offline testing:
-    accessToken: 'pk.eyJ1Ijoicm9iY2F0MjYiLCJhIjoiY2xtNWF5bGYzMDNkbTNubzhnZTJxZ2x3ZyJ9.s980uralAwWmIhegxpNs2A',
+    accessToken: 'pk.eyJ1Ijoicm9iY2F0MjYiLCJhIjoiY2xtMHpwNmtpMGV4ZTNkbTFmazczNXJqNSJ9.l9P-WMfiDKXg4Iv74yVueA',
+    //temp public access token for offline testing:
+    //accessToken: 'pk.eyJ1Ijoicm9iY2F0MjYiLCJhIjoiY2xtNWF5bGYzMDNkbTNubzhnZTJxZ2x3ZyJ9.s980uralAwWmIhegxpNs2A',
    
     showMarkers: false,
     markerColor: '#3FB1CE',

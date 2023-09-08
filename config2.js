@@ -16,7 +16,19 @@ var config = {
     use3dTerrain: false, //set true for enabling 3D maps.
     auto: false,
 
+    title: 'The Far Southeast Side\'s Disconnected Network of Public Parks',
+    subtitle: 'Chicago\'s Southeast side possesses a natural wealth of lakefront and wetlands. But bikers can\'t yet safely access it.',
+    byline: 'by <a href="https://reliablerascal.github.io" target="_blank">Rob Reid</a><br><br><em>6 September 2023</em>',
+    leadParagraph: 'Countless drivers crisscross the rugged prairie of Chicago\'s Southeast Side, weaving around decaying steel mills, abandoned grain silos, landfills, and recycling plants. Traversing the Chicago Skyway, the Bishop Ford Freeway, or major thoroughfares like 130th Street and Torrence Avenue, motorists might not notice the lakefront beaches or wetland parks fashioned from former industrial sites reclaimed by the city in recent decades. They also might not notice the small number of people on foot and bike trying to find respite in these natural settings.',
+    leadPhoto: 'https://reliablerascal.github.io/bike-far-southeast/images/calumet-park-beach-fence-16-9.jpg',
+    footer:'Building on this and other plans, Friends of Big Marsh published the <a href="https://bigmarsh.org/2023/07/14/east-side-community-connections-plan/" target="_blank">East Side Neighborhood Connectivity Plan</a>, which delves into a concrete feasibility plan and provides specific recommendations for how to make that work. As <a href="https://chi.streetsblog.org/2023/07/14/new-east-side-connectivity-plan-would-upgrade-condition-for-biking-to-big-marsh" target="_blank">Streetsblog noted in July</a>, that plan is a key step in building political will necessary to secure funding for bike and pedestrian transit improvements.<p>While funding requirements are significant, improved access in the region would help area residents and visitors tap into an arguably greater wealth: the area’s abundant park space.',
+
     chapters: [
+    ///////////////////////////////////////////////
+//                                           //
+//  CHAPTERS          //
+//                                           //
+///////////////////////////////////////////////
         {
             id: 'header-spacer',
             alignment: 'full',

@@ -442,12 +442,12 @@ var config = {
 
 
         {
-            id: 'jane-healey',
+            id: 'jane-healy',
             alignment: 'left',
             hidden: false,
             image: 'https://reliablerascal.github.io/bike-far-southeast/images/jane-healey-2023-08-19.jpg',
-            caption: 'Jane Healey at Lake Calumet Bike Network Study Tour, August 19. Photo: Rob Reid',
-            description: 'Aside from gaps in the lakefront trail and the Burnham Greenway, east to west transit is even more problematic for bikers. Bike commuters such as Jane Healey, a bike advocate who commutes from her home in Blue Island to St. Francis de Sales High School, confront this challenge regularly.<p>“People want to go out into nature, take their strollers or bring their grandpa out. And it\'s hard,” she says, noting that she\'s been hit by cars twice and incurred over $100,000 in related medical bills for surgery.',
+            caption: 'Jane Healy at Lake Calumet Bike Network Study Tour, August 19. Photo: Rob Reid',
+            description: 'Aside from gaps in the lakefront trail and the Burnham Greenway, east to west transit is even more problematic for bikers. Bike commuters such as Jane Healy, a bike advocate who commutes from her home in Blue Island to St. Francis de Sales High School, confront this challenge regularly.<p>“People want to go out into nature, take their strollers or bring their grandpa out. And it\'s hard,” she says, noting that she\'s been hit by cars twice and incurred over $100,000 in related medical bills for surgery.',
             location: {
                 center: [-87.55607, 41.68376],
                 zoom: 12,
